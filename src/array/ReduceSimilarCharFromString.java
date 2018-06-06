@@ -10,7 +10,7 @@ public class ReduceSimilarCharFromString {
 		String s1 = "aba"; // "aba"
 		String s2 = "1acccca"; // "abdba"
 
-		//System.out.println(reduce(s2));
+		System.out.println(reduce(s2));
 		System.out.println(stackBasedApproch(s2));
 
 	}

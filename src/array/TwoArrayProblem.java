@@ -7,7 +7,7 @@ public class TwoArrayProblem {
 
 		int n = 5;
 		int a[] = new int[] { 2, 1, 500 ,1,1};
-		int b[] = new int[] { 21, 1, 51 ,1,10000}; // 21 + 500
+		int b[] = new int[] { 21, 1, 51 ,1,10000}; // 21 + 500 + 10000
 
 		int[] dpA = new int[n];
 		int[] dpB = new int[n];

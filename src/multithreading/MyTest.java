@@ -10,11 +10,11 @@ public class MyTest {
 		s.put("key", "sd");
 		s.put("ged", 1);
 		
-		//System.out.println(s.toString());
-		Hello.test(4);
+		System.out.println(s.toString());
+		//Hello.test(4);
 		//Integer.parseInt(s);
 		
-		Long.parseLong("");
+		//Long.parseLong("");
 		System.currentTimeMillis();
 		tr();
 	}

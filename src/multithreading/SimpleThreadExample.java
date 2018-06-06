@@ -1,7 +1,5 @@
 package multithreading;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.Semaphore;
 
 public class SimpleThreadExample {
@@ -12,8 +10,9 @@ public class SimpleThreadExample {
 
 		Thread t1 = new Thread(new Even(0, "t1", oddPermit, evenPermit));
 		Thread t2 = new Thread(new Odd(1, "t2", oddPermit, evenPermit));
-		t1.start();
+		
 		t2.start();
+		t1.start();
 		
 	}
 
