@@ -15,7 +15,26 @@ public class MaximumnumberOfOnesinRow {
 			{0 ,0, 0, 0},
 			{1 ,1, 1, 1}
 		};
-		System.out.println(findRow(a,4));
+		//System.out.println(findRow(a,4));
+		System.out.println(findmaxOnce(a,5,4));
+	}
+
+	private static int findmaxOnce(int[][] a, int m, int n) {
+		int i = 0;
+		int j = n - 1;
+		while (j >= 0) {
+			while (a[i][j] != 0) {
+				j--;
+				if (j < 0) {
+					return n;
+				}
+			}
+			if (i >= m - 1) {
+				break;
+			}
+			i++;
+		}
+		return n - (j + 1);
 	}
 
 private static int findRow(int[][] a,int column) {
