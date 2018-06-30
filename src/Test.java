@@ -7,30 +7,31 @@ import java.io.ObjectOutputStream;
 public class Test {
 	final int sss;
 	{
-		sss=100;
+		sss = 100;
 	}
-	
+
 	static class A {
 		int ww;
+
 		A(int a) {
 			ww = a;
-			
+
 		}
+
 		void ma() {
 			Test test = new Test();
 			System.out.println(test.sss);
 		}
-		
-		
+
 	}
+
 	public static void main(String[] args) throws IOException {
 
-		
 		Test.A s = new Test.A(11);
-		
-		//System.out.println(s.ma());
+
+		// System.out.println(s.ma());
 		s.ma();
-		
+
 		Demo object = new Demo(1, "geeksforgeeks");
 		String filename = "file.ser";
 
@@ -81,8 +82,9 @@ public class Test {
 			System.out.println("ClassNotFoundException is caught");
 		}
 
-	}
+		System.out.println(Math.round(1 * 1000.0) / 1000.0);
 
+	}
 }
 
 class Demo implements java.io.Serializable {
