@@ -1,6 +1,6 @@
 import java.io.Serializable;
 
-public class SerializedSingleton implements Serializable{
+public class SerializedSingleton implements Serializable,Cloneable{
 
 	private static final long serialVersionUID = -7604766932017737115L;
 
@@ -13,8 +13,8 @@ public class SerializedSingleton implements Serializable{
     public static SerializedSingleton getInstance(){
         return SingletonHelper.instance;
     }
-    
-    protected Object readResolve() {
+    // to avoid creating new objects
+   protected Object readResolve() {
         return getInstance();
     }
 }

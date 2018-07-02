@@ -3,6 +3,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Stack;
 
 public class Test {
 	final int sss;
@@ -83,7 +84,43 @@ public class Test {
 		}
 
 		System.out.println(Math.round(1 * 1000.0) / 1000.0);
+		
+		Stack<S> st = new Stack<S>();
+		st.push(new S(4,5));
+		System.out.println(st.contains(new S(4,5)));
+	}
+	static class S {
+		int i, j;
 
+		S(int i, int j) {
+			this.i = i;
+			this.j = j;
+		}
+
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + i;
+			result = prime * result + j;
+			return result;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			S other = (S) obj;
+			if (i != other.i)
+				return false;
+			if (j != other.j)
+				return false;
+			return true;
+		}
 	}
 }
 
