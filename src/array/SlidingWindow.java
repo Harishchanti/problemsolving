@@ -53,8 +53,39 @@ public class SlidingWindow {
 	// Driver program to test above functions
 	public static void main(String[] args) {
 		int arr[] = { 12, 1, 78, 90, 57, 89, 56 };
+		int arr1[] = { 12, -1, -78, -90, -57, -89, 56 };
 		int k = 3;
 		printMax(arr, arr.length, k);
+		System.out.println();
+		printFirstNagitiveValue(arr1, k);
+	}
+
+	private static void printFirstNagitiveValue(int[] a, int k) {
+		int i;
+		Deque<Integer> dq = new LinkedList<Integer>();
+		for (i = 0; i < k; i++) {
+			if(a[i]<0) {
+				dq.addLast(i);
+			}
+		}
+
+		for (; i < a.length ; i++) {
+
+			if (!dq.isEmpty()) {
+				System.out.print(a[dq.peekFirst()]+" ");
+			} else {
+				System.out.println(0+" ");
+			}
+			
+			while(!dq.isEmpty() && dq.peekFirst() < i+1-k) {
+				dq.removeFirst();
+			}
+			if(a[i]<0) {
+				dq.addLast(i);
+			}
+		}
+		System.out.print(a[dq.peekFirst()]+" ");
+
 	}
 
 }
