@@ -66,11 +66,11 @@ public class MazeProblem {
 		boolean falg = false;
 		int h = 0, k = 0;
 		while (!stack.isEmpty()) {
-			if (!stack.isEmpty()) {
+			//if (!stack.isEmpty()) {
 				Path peek = stack.peek();
 				h = peek.i;
 				k = peek.j;
-			}
+			//}
 			if (h == m && k == n) {
 				falg = true;
 				break;
