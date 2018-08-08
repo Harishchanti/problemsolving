@@ -3,7 +3,7 @@ package linkedlist;
 public class AddingOneToLinkedList {
 
     public static void main(String[] args) {
-        int[] a = {1,9,9};
+        int[] a = {1, 9, 9};
         ListNode head = createList(a);
         print(head);
         System.out.println("\n after adding 1 ");
