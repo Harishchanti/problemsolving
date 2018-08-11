@@ -33,7 +33,9 @@ local.properties
 .loadpath
 /src/main/resources/rebel.xml
 
+.idea/
 # External tool builders
 .externalToolBuilders/**
+bin/**
 
 .idea

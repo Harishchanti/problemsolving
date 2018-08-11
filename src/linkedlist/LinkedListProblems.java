@@ -26,11 +26,12 @@ public class LinkedListProblems {
 		print(head);
 	}
 
-	private static void print(Node head) {
+	public static void print(Node head) {
 		while (head != null) {
 			System.out.print(head.x+"->");
 			head = head.next;
 		}
+		System.out.println();
 	}
 
 	private static Node correct(Map<String, String> q) {
