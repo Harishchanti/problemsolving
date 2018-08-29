@@ -28,24 +28,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="trove4j-3.0.1.jar">
-        <CLASSES>
-          <root url="file://$USER_HOME$/Downloads/trove4j-3.0.1.jar" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="metrics-core-3.2.5.jar">
-        <CLASSES>
-          <root url="file://$USER_HOME$/Downloads/metrics-core-3.2.5.jar" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="slf4j.jar">
         <CLASSES>
           <root url="file://$USER_HOME$/Downloads/slf4j.jar" />
@@ -55,9 +37,9 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="joda-time-2.1.jar">
+      <library>
         <CLASSES>
-          <root url="file://$USER_HOME$/Downloads/joda-time-2.1.jar" />
+          <root url="jar://$USER_HOME$/Downloads/joda-time-2.10.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
