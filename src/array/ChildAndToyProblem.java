@@ -34,45 +34,62 @@ out :
 
 public class ChildAndToyProblem {
 
-	public static void main(String[] args) {
-		int[][] a = new int[][] { 
-			{ 1, 5, 4, 2 }, 
-			{ 4, 6, 1, 6 }, 
-			{ 7, 3, 2, 1 }, 
-			{ 3, 5, 1, 2 }
-		};
+    public static void main(String[] args) {
+        int[][] a = new int[][]{
+                {1, 5, 4, 2},
+                {4, 6, 1, 6},
+                {7, 3, 2, 1},
+                {3, 5, 1, 2}
+        };
 
-		System.out.println(getMax(a));
-	}
+        //System.out.println(getMax(a));
+        System.out.println(minCount(1, 1, 4, 0));
+        System.out.println(minCount(1, 5, 4, 0));
+    }
 
-	private static int getMax(int[][] a) {
-		int n = a.length;
-		int max=0,i = 0;
-		int[][] s = new int[n][n];
+    private static long minCount(long a, long b, long x, long c) {
 
-		for(i= 0; i<n;i++) {
-			s[0][i] = a[0][i];
-		}
+        if (x == c) {
+            return 0;
+        }
 
-		for ( i = 1; i < n; i++) {
-			for (int j = 0; j < n; j++) {
-				if (j > i ) {
-					s[i][j] = max(a[i][j], a[i -1][j]);
-				} else {
-					if (i > 0 && j > 0) {
-						s[i][j] = max(a[i][j] + s[i - 1][j - 1], s[i][j - 1] + s[i - 1][j]);
-					} else {
-						s[i][j] = a[i][j];
-					}
-				}
-			}
-		}
+        if(c > x) {
+            return minCount(a,b,x,c-1);
+        }
+        long r = minCount(a, b, x, c + 1) + a + ((c > x) ? minCount(a, b, x, c - 1)+a : 0);
+        long l = minCount(a, b, x, c * 2) + b;
 
-		return max;
-	}
+        return Math.min(r, l);
+    }
 
-	private static int max(int i, int j) {
-		return i > j ? i : j;
-	}
+    private static int getMax(int[][] a) {
+        int n = a.length;
+        int max = 0, i = 0;
+        int[][] s = new int[n][n];
+
+        for (i = 0; i < n; i++) {
+            s[0][i] = a[0][i];
+        }
+
+        for (i = 1; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (j > i) {
+                    s[i][j] = max(a[i][j], a[i - 1][j]);
+                } else {
+                    if (i > 0 && j > 0) {
+                        s[i][j] = max(a[i][j] + s[i - 1][j - 1], s[i][j - 1] + s[i - 1][j]);
+                    } else {
+                        s[i][j] = a[i][j];
+                    }
+                }
+            }
+        }
+
+        return max;
+    }
+
+    private static int max(int i, int j) {
+        return i > j ? i : j;
+    }
 
 }
