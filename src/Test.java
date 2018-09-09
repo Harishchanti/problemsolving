@@ -10,8 +10,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
-import org.joda.time.DateTime;
-
 public class Test {
 	final int sss;
 	{
@@ -110,8 +108,6 @@ public class Test {
 		for(List<Integer> d:pages) {
 			System.out.println(d);
 		}
-		
-		System.out.print(new DateTime(2018,7,1,0,0,0));
 
 		System.out.println(Math.round(1 * 1000.0) / 1000.0);
 		
