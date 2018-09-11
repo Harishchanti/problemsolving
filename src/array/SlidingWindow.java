@@ -52,7 +52,8 @@ public class SlidingWindow {
 
 	// Driver program to test above functions
 	public static void main(String[] args) {
-		int arr[] = { 12, 1, 78, 90, 57, 89, 56 };
+		//int arr[] = { 12, 1, 78, 90, 57, 89, 56 };
+		int arr[] = { 3, 2, 1, 90, 57, 89, 56 };
 		int arr1[] = { 12, -1, -78, -90, -57, -89, 56 };
 		int k = 3;
 		printMax(arr, arr.length, k);
