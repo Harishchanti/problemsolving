@@ -7,7 +7,7 @@ public class BinaryTree {
 		int[] a = new int[] { 2, 45, 12, 3, 4, 22 };
 		/*Node root = null;
 		for (int i = 0; i < a.length; i++) {
-
+0
 			root = createTree(root, a[i]);
 		}*/
 
