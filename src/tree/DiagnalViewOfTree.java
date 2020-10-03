@@ -25,7 +25,16 @@ public class DiagnalViewOfTree {
 		root.left.right.right = new Node(5);
 		root.left.right.right.right = new Node(6);
 		// Tree t = new Tree(root);
+		inOrderTraversal(root);
 
+	}
+
+	private static void inOrderTraversal(Node root) {
+		if(root!=null){
+			inOrderTraversal(root.left);
+			System.out.println(root.data);
+			inOrderTraversal(root.right);
+		}
 	}
 
 	static void diagonalPrintUtil(Node root, int d, HashMap<Integer, Vector<Integer>> diagonalPrint) {
