@@ -22,6 +22,16 @@ public class Mytest {
         map.put("abcg", new Temp(new Boolean(true), "dfgdfgf"));
         map.put("fgdfgdfg", new Temp(new Boolean(true), "dfgdfgf"));
 
+        Map<String,Object> a = new HashMap<>();
+
+        a.put("a",22);
+        a.put("sdfsd","sdf");
+
+
+
+
+
+        System.out.print(a);
 
        /* Map ss =new LinkedHashMap<String,String>(33, 0.75f, true) {
             protected boolean removeEldestEntry(Map.Entry eldest) {
@@ -32,6 +42,9 @@ public class Mytest {
         for (Map.Entry e : map.entrySet()) {
             System.out.println(e.getKey() + " " + e.getValue());
         }
+
+        Map<String,String> gg = new LinkedHashMap<>();
+        
 
 
     }
