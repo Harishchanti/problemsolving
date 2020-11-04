@@ -11,8 +11,8 @@ public class LongestBST {
             10        60
            /  \       /  \
           5   20    55    70
-         /     /  \
-        45   65    80
+                   /     /  \
+                  45   65    80
          */
 
         Node root = new Node(50);
@@ -46,7 +46,8 @@ public class LongestBST {
             return max(largestBST(root.left), largestBST(root.right));
     }
 
-    private static int size(Node root) {
+    // depth
+    /*private static int size(Node root) {
 
         if (root == null) return 0;
 
@@ -58,6 +59,14 @@ public class LongestBST {
 
             else return rHight + 1;
         }
+    }*/
+
+    // number of nodes;
+    static int size(Node node) {
+        if (node == null)
+            return 0;
+        else
+            return (size(node.left) + 1 + size(node.right));
     }
 
     static boolean isBST(Node root) {

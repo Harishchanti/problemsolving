@@ -1,8 +1,14 @@
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import javax.print.attribute.standard.NumberUp;
+import java.io.IOException;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Mytest {
+    String s;
+
+    public Mytest(String ddf) {
+        s = ddf;
+    }
 
     public static void main(String[] args) {
 
@@ -22,13 +28,18 @@ public class Mytest {
         map.put("abcg", new Temp(new Boolean(true), "dfgdfgf"));
         map.put("fgdfgdfg", new Temp(new Boolean(true), "dfgdfgf"));
 
-        Map<String,Object> a = new HashMap<>();
+        Map<String, Object> a = new HashMap<>();
 
-        a.put("a",22);
-        a.put("sdfsd","sdf");
+        Set sss = map.keySet();
+
+        //Collections.sort(sss);
+        sss = new TreeSet(sss);
+
+        a.put("a", 22);
+        a.put("sdfsd", "sdf");
 
 
-
+        System.out.println(testmeth());
 
 
         System.out.print(a);
@@ -43,10 +54,113 @@ public class Mytest {
             System.out.println(e.getKey() + " " + e.getValue());
         }
 
-        Map<String,String> gg = new LinkedHashMap<>();
-        
+        Map<String, String> gg = new LinkedHashMap<>();
+
+        ttt g = new ttt();
+        g.m();
 
 
+        System.out.println();
+        String s1 = "slip";
+        Integer hhh = new Integer(5);
+        String s2 = fli(s1, hhh);
+        System.out.println(hhh);
+
+        System.out.println(s1 + " " + s2);
+
+        rrr r = new rrr();
+        rrr f1 = new ttt();
+        ttt f3 = new ttt();
+
+        prd(r);
+        prd(f1);
+        prd(f3);
+
+        HashSet<Object> set = new HashSet<>();
+        Mytest fff = new Mytest("ddf");
+        Mytest fff1 = new Mytest("ddf");
+
+        String df = new String("ddf");
+        String ddf = new String("ddf");
+
+        set.add(fff);
+        set.add(fff1);
+        set.add(df);
+        set.add(ddf);
+
+        System.out.println(set.size());
+
+
+        fof(2);
+
+
+    }
+
+    private static void fof(int i) {
+        if (i >= 0) {
+            fof(i - 1);
+        }
+        System.out.print("Nu : "+ i);
+    }
+
+
+    private static void prd(rrr r) {
+        r.m();
+    }
+
+    private static String fli(String s1, Integer s) {
+        s += 33;
+        s1 = s1 + "stream";
+        System.out.print(s1 + " ");
+        return "stream";
+    }
+
+
+    static class rrr {
+        rrr() {
+            //System.out.println("rrr");
+        }
+
+        void m() {
+            System.out.println("base");
+        }
+    }
+
+    static class ttt extends rrr {
+
+        ttt() {
+            System.out.print("ttt");
+        }
+
+        void m() {
+            System.out.println("derived");
+        }
+    }
+
+    private static int testmeth() {
+
+        try {
+            int d = 7 / 0;
+        } catch (Exception e) {
+            return 3;
+        } finally {
+            return 9;
+        }
+    }
+}
+
+class Teee<N extends Number> {
+
+    N min, max;
+
+    public N getMax() {
+        return max;
+    }
+
+    public void add(N aa) {
+        if (min == null || aa.doubleValue() < min.doubleValue()) {
+
+        }
     }
 }
 
