@@ -96,6 +96,21 @@ public class Mytest {
 
     }
 
+    interface  Ia {
+        int i = 4;
+    }
+    class  A {
+        int i =1;
+        int j = 2;
+    }
+
+    class B extends A implements Ia {
+        void m() {
+            //System.out.print(i);
+        }
+    }
+
+
     private static void fof(int i) {
         if (i >= 0) {
             fof(i - 1);

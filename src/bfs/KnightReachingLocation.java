@@ -36,15 +36,15 @@ public class KnightReachingLocation {
         int dx[] = { -2, -1, 1, 2, -2, -1, 1, 2 };
         int dy[] = { -1, -2, -2, -1, 1, 2, 2, 1 };
          */
-        findMinMoves(board, startX + 2, startY - 1, endX, m, n, endY, count + 1, result);
-        findMinMoves(board, startX + 2, startY + 1, endX, m, n, endY, count + 1, result);
-        findMinMoves(board, startX - 2, startY - 1, endX, m, n, endY, count + 1, result);
-        findMinMoves(board, startX - 2, startY + 1, endX, m, n, endY, count + 1, result);
+        findMinMoves(board, startX + 2, startY - 1, m, n, endX, endY, count + 1, result);
+        findMinMoves(board, startX + 2, startY + 1, m, n, endX, endY, count + 1, result);
+        findMinMoves(board, startX - 2, startY - 1, m, n, endX, endY, count + 1, result);
+        findMinMoves(board, startX - 2, startY + 1, m, n, endX, endY, count + 1, result);
 
-        findMinMoves(board, startX - 1, startY + 2, endX, m, n, endY, count + 1, result);
-        findMinMoves(board, startX - 1, startY - 2, endX, m, n, endY, count + 1, result);
-        findMinMoves(board, startX + 1, startY + 2, endX, m, n, endY, count + 1, result);
-        findMinMoves(board, startX + 1, startY - 2, endX, m, n, endY, count + 1, result);
+        findMinMoves(board, startX - 1, startY + 2, m, n, endX, endY, count + 1, result);
+        findMinMoves(board, startX - 1, startY - 2, m, n, endX, endY, count + 1, result);
+        findMinMoves(board, startX + 1, startY + 2, m, n, endX, endY, count + 1, result);
+        findMinMoves(board, startX + 1, startY - 2, m, n, endX, endY, count + 1, result);
 
 
     }
