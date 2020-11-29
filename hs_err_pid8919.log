@@ -1,5 +1,5 @@
 #
-# A fatal error has been detected by the Java Runtime Environment:
+# company_interview.A fatal error has been detected by the Java Runtime Environment:
 #
 #  Internal Error (javaCalls.cpp:51), pid=8919, tid=0x00007f0b9ea9b700
 #  guarantee(thread->is_Java_thread()) failed: crucial check - the VM thread cannot and must not escape to Java code
@@ -12,7 +12,7 @@
 #   http://bugreport.java.com/bugreport/crash.jsp
 #
 
----------------  T H R E A D  ---------------
+---------------  T H R E company_interview.A D  ---------------
 
 Current thread (0x00007f0bb8144800):  VMThread [stack: 0x00007f0b9e99c000,0x00007f0b9ea9c000] [id=8927]
 

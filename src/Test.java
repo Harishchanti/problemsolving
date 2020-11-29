@@ -33,7 +33,7 @@ public class Test {
 
     public static void main(String[] args) throws IOException {
 
-		/*Test.A s = new Test.A(11);
+		/*Test.company_interview.A s = new Test.company_interview.A(11);
 
 		// System.out.println(s.ma());
 		s.ma();

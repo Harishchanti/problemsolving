@@ -1,3 +1,5 @@
+package company_interview;
+
 public class Noon {
 
     public static void main(String[] args) {

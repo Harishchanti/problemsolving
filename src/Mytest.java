@@ -1,7 +1,10 @@
+/*
 import javax.print.attribute.standard.NumberUp;
 import java.io.IOException;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
+
 
 public class Mytest {
     String s;
@@ -44,12 +47,14 @@ public class Mytest {
 
         System.out.print(a);
 
-       /* Map ss =new LinkedHashMap<String,String>(33, 0.75f, true) {
+       */
+/* Map ss =new LinkedHashMap<String,String>(33, 0.75f, true) {
             protected boolean removeEldestEntry(Map.Entry eldest) {
                 return size() > 2;
 
             }
-        }*/
+        }*//*
+
         for (Map.Entry e : map.entrySet()) {
             System.out.println(e.getKey() + " " + e.getValue());
         }
@@ -59,6 +64,10 @@ public class Mytest {
         ttt g = new ttt();
         g.m();
 
+        */
+/*ConcurrentHashMap<String,String> map = new ConcurrentHashMap<>();*//*
+
+        map.put("sdf","sfd");
 
         System.out.println();
         String s1 = "slip";
@@ -99,12 +108,12 @@ public class Mytest {
     interface  Ia {
         int i = 4;
     }
-    class  A {
+    class  company_interview.A {
         int i =1;
         int j = 2;
     }
 
-    class B extends A implements Ia {
+    class B extends company_interview.A implements Ia {
         void m() {
             //System.out.print(i);
         }
@@ -203,5 +212,27 @@ final class S {
 
     S(int d) {
         g = d;
+    }
+}*/
+
+import java.util.Objects;
+
+class SongDetailsd {
+    String name;
+    String singer;
+    Integer count;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SongDetailsd that = (SongDetailsd) o;
+        return Objects.equals(name, that.name) &&
+                Objects.equals(singer, that.singer);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, singer);
     }
 }

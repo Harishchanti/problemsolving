@@ -1,3 +1,4 @@
+package company_interview;
 
 public class PrintFibanacciNumber {
     public static void main(String[] args) {
