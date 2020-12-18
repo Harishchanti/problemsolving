@@ -21,6 +21,7 @@ public class Salseforce {
         int n = 3;
         List<String> topSongs = findTopMostDownloadedSongs(logs, n);
 
+        long sd = Long.parseLong("3208487825674434");
         topSongs.forEach(o -> {
             System.out.print(o + " ");
         });
@@ -44,12 +45,14 @@ public class Salseforce {
         for (Map.Entry<String, Integer> s : map.entrySet()) {
             Song d = new Song(s.getKey(), s.getValue());
             pq.add(d);
+           // if(pq.contains(d)) pq.remove(d);
         }
 
         while (!pq.isEmpty()){
-            if (result.size() <n) {
+           /* if (result.size() <n) {
                 result.add(pq.poll().name);
-            } else break;
+            } else break;*/
+            pq.remove(pq.peek());
         }
         return result;
 
