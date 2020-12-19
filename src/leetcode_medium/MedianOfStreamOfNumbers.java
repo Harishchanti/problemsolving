@@ -3,7 +3,7 @@ package leetcode_medium;
 import java.util.Collections;
 import java.util.PriorityQueue;
 
-public class MedianOdStreamOfNumbers {
+public class MedianOfStreamOfNumbers {
 
     // method to calculate med of stream
     public static void printMedian(int[] a) {
