@@ -2,13 +2,23 @@ package company_interview;
 
 import java.util.*;
 
-public class Walmart {
+interface S {
+    void m();
+}
+interface D {
+    void ma();
+}
+public class Walmart implements S,D{
 
     static volatile int currentThread = 1;
     static Object ob = new Object();
     static int i = 0;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+        Map<String,String> map = new HashMap<>();
+
+        Map<String,String> t = new TreeMap<>();
+
         /*String[] a = {"a", "b", "c"};
         List<String> aList = Arrays.asList("a", "b", "c");
 
@@ -44,9 +54,19 @@ China -2
         System.out.print(tMap);*/
         Thread t1 = new Thread(new PrintNumber(1));
         Thread t2 = new Thread(new PrintNumber(2));
-
+        Thread.sleep(2);
         t1.start();
         t2.start();
+
+    }
+
+    @Override
+    public void m() {
+
+    }
+
+    @Override
+    public void ma() {
 
     }
 
