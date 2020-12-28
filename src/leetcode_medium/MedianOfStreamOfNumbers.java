@@ -30,7 +30,7 @@ public class MedianOfStreamOfNumbers {
         for (int i = 1; i < a.length; i++) {
 
             int x = a[i];
-
+            // 8 13 15 16
             // case1(left side heap has more elements)
             if (smaller.size() > greater.size()) {
                 if (x < med) {

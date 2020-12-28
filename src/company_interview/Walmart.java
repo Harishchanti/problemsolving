@@ -1,6 +1,9 @@
 package company_interview;
 
 import java.util.*;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 interface S {
     void m();
@@ -15,9 +18,13 @@ public class Walmart implements S,D{
     static int i = 0;
 
     public static void main(String[] args) throws InterruptedException {
-        Map<String,String> map = new HashMap<>();
-
+        Map<String,String> map = new HashMap<>(1);
+        map.put("dd","s");map.put("ddf","s");
+        System.out.println(map);
         Map<String,String> t = new TreeMap<>();
+        ExecutorService e = Executors.newFixedThreadPool(10);
+
+        //t.put(null,"");
 
         /*String[] a = {"a", "b", "c"};
         List<String> aList = Arrays.asList("a", "b", "c");
