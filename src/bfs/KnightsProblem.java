@@ -54,7 +54,7 @@ public class KnightsProblem {
         // visit starting state
         visit[knightPos[0]][knightPos[1]] = true;
 
-        // loop untill we have one element in queue
+        // loop until we have one element in queue
         while (!q.isEmpty()) {
             t = q.firstElement();
             q.remove(0);
