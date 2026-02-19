@@ -34,6 +34,7 @@ public class LongestPalindromicSubString {
 
                 // expand substring while it is a palindrome
                 // and in bounds
+                //
                 while (low >= 0 && high < n && s.charAt(low) == s.charAt(
                         high)) {
                     int currLen = high - low + 1;
