@@ -6,7 +6,7 @@ public class Knapsack {
 		return (a > b) ? a : b;
 	}
 
-	// Returns the maximum value that can be put in a knapsack of capacity W
+	// Returns  the maximum value that can be put in a knapsack of capacity W
 	static int knapSack(int W, int wt[], int val[], int n) {
 		// Build table K[][] in bottom up manner
 		int i, w;
