@@ -42,9 +42,9 @@ public class ChildAndToyProblem {
                 {3, 5, 1, 2}
         };
 
-        //System.out.println(getMax(a));
-        System.out.println(minCount(1, 1, 4, 0));
-        System.out.println(minCount(1, 5, 4, 0));
+        System.out.println(getMax(a));
+        //System.out.println(minCount(1, 1, 4, 0));
+        //System.out.println(minCount(1, 5, 4, 0));
     }
 
     private static long minCount(long a, long b, long x, long c) {

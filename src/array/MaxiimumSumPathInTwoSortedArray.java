@@ -7,7 +7,7 @@ public class MaxiimumSumPathInTwoSortedArray {
 
     // Utility function to find maximum of two integers
     int max(int x, int y) {
-        return (x > y) ? x : y;
+        return Math.max(x, y);
     }
 
     // This function returns the sum of elements on maximum

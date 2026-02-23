@@ -18,7 +18,7 @@ public class LogestSubArrayWithoutDuplicates {
 
         while (r < s.length()) {
 
-            while (visted[s.charAt(r)] == true) {
+            while (visted[s.charAt(r)]) {
                 visted[s.charAt(l)] = false;
                 l++;
             }

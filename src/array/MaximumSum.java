@@ -5,7 +5,7 @@ public class MaximumSum {
 	/*
 	 * Function to return max sum such that no two elements are adjacent
 	 */
-	int FindMaxSum(int arr[], int n) {
+	int FindMaxSum(int[] arr, int n) {
 		int incl = arr[0];
 		int excl = 0;
 		int excl_new;
@@ -13,7 +13,7 @@ public class MaximumSum {
 
 		for (i = 1; i < n; i++) {
 			/* current max excluding i */
-			excl_new = (incl > excl) ? incl : excl;
+			excl_new = Math.max(incl, excl);
 
 			/* current max including i */
 			incl = excl + arr[i];
@@ -21,7 +21,7 @@ public class MaximumSum {
 		}
 
 		/* return max of incl and excl */
-		return ((incl > excl) ? incl : excl);
+		return (Math.max(incl, excl));
 	}
 
 	/*

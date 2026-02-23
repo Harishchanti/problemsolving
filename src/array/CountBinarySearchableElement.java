@@ -35,9 +35,8 @@ public class CountBinarySearchableElement {
 
     public static void main(String[] args) {
         //int[] Arr = { 10, 1, 2, 3, 4, 8, 6, 5, 7, 12, 9, 8, 13, 15, 11 };
-        //int n = 15
         int[] Arr = {3, 3, 2};
-        int n = 3;
+        int n = Arr.length;
 
         System.out.print(
                 "Number of Binary Searchable Indexes: ");
