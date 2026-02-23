@@ -5,7 +5,8 @@ public class HeapImpl {
 	static int N;
 
 	public static void main(String[] args) {
-		int[] arr = new int[] { 3, 4, 14, 1, -5, -1 };
+		//int[] arr = new int[] { 3, 4, 14, 1, -5, -1 };
+        int arr[] = {1, 3, 5, 4, 6, 13, 10, 9, 8, 15, 17};
 
 		heapify(arr);
 
@@ -17,7 +18,7 @@ public class HeapImpl {
 
 			N = N - 1;
 
-			maxheap(arr, 0);
+			minheap(arr, 0);
 
 		}
 		for (int j = 0; j < arr.length; j++) {
@@ -36,13 +37,13 @@ public class HeapImpl {
 
 		for (int i = N / 2; i >= 0; i--)
 
-			maxheap(arr, i);
+			minheap(arr, i);
 
 	}
 
 	/* Function to swap largest element in heap */
 
-	public static void maxheap(int arr[], int i)
+	public static void minheap(int arr[], int i)
 
 	{
 
@@ -52,7 +53,7 @@ public class HeapImpl {
 
 		int max = i;
 
-		if (left <= N && arr[left] > arr[i])
+		if (left <= N && arr[left] > arr[max])
 
 			max = left;
 
@@ -66,7 +67,7 @@ public class HeapImpl {
 
 			swap(arr, i, max);
 
-			maxheap(arr, max);
+			minheap(arr, max);
 
 		}
 
