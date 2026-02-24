@@ -22,8 +22,8 @@ public class ShortestPathFromorigintoAnycell {
 
 	}
 	private static int min(int i, int j, int k) {
-		int f = (i < j) ? i : j;
-		return (f < k) ? f : k;
+		int f = Math.min(i, j);
+		return Math.min(f, k);
 	}
 
 }
