@@ -29,7 +29,7 @@ public class TwoArrayProblem {
 			dpB[i] = max(dpB[i - 1] + b[i], dpA[i - 1]);
 		}
 
-		System.out.println(dpA[n-1] > dpB[n-1] ? dpA[n-1] : dpB[n-1]);
+		System.out.println(Math.max(dpA[n - 1], dpB[n - 1]));
 		
 	}
 
