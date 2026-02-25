@@ -2,8 +2,21 @@ package tree;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class PathBetweenTwoNodes {
+    /*
+
+          0
+        /    \
+       1       2
+     /  \     /  \
+    3    4    5   6
+   /    /  \
+  7    8    9
+
+
+     */
 
     public static void main(String[] args) {
         Node root = getNode(0);
@@ -33,7 +46,7 @@ public class PathBetweenTwoNodes {
 
         while (i < path1.size() || j < path2.size()) {
 
-            if (path1.get(i) == path2.get(j) && i == j) {
+            if (Objects.equals(path1.get(i), path2.get(j)) && i == j) {
                 i++;
                 j++;
             } else {

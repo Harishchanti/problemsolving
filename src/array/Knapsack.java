@@ -3,7 +3,7 @@ package array;
 public class Knapsack {
 
 	static int max(int a, int b) {
-		return (a > b) ? a : b;
+		return Math.max(a, b);
 	}
 
 	// Returns  the maximum value that can be put in a knapsack of capacity W

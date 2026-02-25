@@ -3,8 +3,6 @@ package bfs;
 public class KnightReachingLocation {
     public static void main(String[] args) {
         int m = 30, n = 30;
-
-        int startX = 1, startY = 1;
         int endX = 30, endY = 30;
 
         int[] result = new int[1];
@@ -15,7 +13,7 @@ public class KnightReachingLocation {
             for (int j = 0; j < n; j++)
                 board[i][j] = Integer.MAX_VALUE;
 
-        findMinMoves(board, startX - 1, startY - 1, m, n, endX - 1, endY - 1, 0, result);
+        findMinMoves(board, 0, 0, m, n, endX - 1, endY - 1, 0, result);
 
         System.out.print(result[0]);
     }

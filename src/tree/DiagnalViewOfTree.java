@@ -42,7 +42,7 @@ public class DiagnalViewOfTree {
         diagonalPrintUtil(root, 0, vectorHashMap);
         for (Map.Entry<Integer, ArrayList<Integer>> elements : vectorHashMap.entrySet()) {
             ArrayList<Integer> integerArrayList = elements.getValue();
-            integerArrayList.stream().forEach(o -> System.out.println(o));
+            integerArrayList.forEach(System.out::println);
         }
 
     }
