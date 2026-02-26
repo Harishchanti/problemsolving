@@ -78,7 +78,7 @@ class TrieNode {
     String subString;
 
     public TrieNode(String subString) {
-        this.hm = new HashMap<Character, TrieNode>();
+        this.hm = new HashMap<>();
         this.isWord = false;
         this.subString = subString;
     }
