@@ -12,10 +12,53 @@ public class ReverseTheLinkedListOfGroupK extends LinkedListProblems {
         head.next.next.next.next.next.next.next = new Node("8");
         head.next.next.next.next.next.next.next.next = new Node("9");
 
+        int k = 5;
         print(head);
-        Node pHead = swapThelistLengthK(head, 2);
+        Node pHead = swapThelistLengthK(head, k);
 
         print(pHead);
+
+        System.out.println();
+        // Swap the list only if the k groups exist;
+
+        Node head1 = new Node("1");
+        head1.next = new Node("2");
+        head1.next.next = new Node("3");
+        head1.next.next.next = new Node("4");
+        head1.next.next.next.next = new Node("5");
+        head1.next.next.next.next.next = new Node("6");
+        head1.next.next.next.next.next.next = new Node("7");
+        head1.next.next.next.next.next.next.next = new Node("8");
+        head1.next.next.next.next.next.next.next.next = new Node("9");
+
+        print(head1);
+        Node  rHead = reverseKGroup(head1,k);
+        print(rHead);
+
+    }
+
+    private static Node reverseKGroup(Node head, int k) {
+
+        int  i = 0;
+        Node temp = head;
+        while(i++ < k) {
+            if(temp == null) return head;
+            temp = temp.next;
+        }
+
+        Node  previous = reverseKGroup(temp,k);
+
+        Node current = head;
+        Node next = null;
+        i = 0;
+
+        while( i++ < k) {
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        return previous;
     }
 
     private static Node swapThelistLengthK(Node head, int k) {
