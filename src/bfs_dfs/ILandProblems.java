@@ -1,4 +1,4 @@
-package array;
+package bfs_dfs;
 
 public class ILandProblems {
 

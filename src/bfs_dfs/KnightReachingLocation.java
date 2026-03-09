@@ -1,4 +1,4 @@
-package bfs;
+package bfs_dfs;
 
 public class KnightReachingLocation {
     public static void main(String[] args) {

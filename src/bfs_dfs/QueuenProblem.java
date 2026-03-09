@@ -1,4 +1,4 @@
-package bfs;
+package bfs_dfs;
 
 import java.io.*;
 import java.util.ArrayList;
