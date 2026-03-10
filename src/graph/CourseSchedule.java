@@ -1,9 +1,6 @@
 package graph;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class CourseSchedule {
     public static void main(String[] args) {
@@ -14,60 +11,67 @@ public class CourseSchedule {
     }
 
     public static boolean canFinish(int numCourses, int[][] prerequisites) {
-        // check if topological sorting is possible
 
         Map<Integer, List<Integer>> adjMap = new HashMap<>();
+        List<Integer> list = null;
+
+        int[] indegree = new int[numCourses];
+
+        for(int i = 0; i< numCourses; i++) {
+            adjMap.put(i,new ArrayList<>());
+        }
 
         for (int i = 0; i < prerequisites.length; i++) {
-            List<Integer> list = null;
+
             int v = prerequisites[i][0];
             int u = prerequisites[i][1];
 
-            if (adjMap.containsKey(u)) {
-                list = adjMap.get(u);
-                list.add(v);
-            } else {
-                list = new ArrayList<>();
-                list.add(v);
+            list = adjMap.get(u);
+            list.add(v);
 
-            }
+            indegree[v]++; // { { 0, 1 } };// 1 --> 0
             adjMap.put(u, list);
         }
-      /*  for(int i=0; i < numCourses;i++) {
-            if(!adjMap.containsKey(i)) {
-                adjMap.put(i,new ArrayList<>());
-            }
-        }
-        boolean[] visited = new boolean[numCourses];
 
-        for (int i = 0; i < numCourses; i++) {
 
-            if (!visited[i] && DFS(adjMap, i, visited, -1)) {
-                return true;
-            }
-        }
-*/
-        return false;
+
+        return isTopoligicalSort(adjMap, numCourses, indegree);
 
     }
 
-    private static boolean DFS(Map<Integer, List<Integer>> adjMap, int u,
-            boolean[] visited, int parent) {
+    private static boolean isTopoligicalSort(Map<Integer, List<Integer>> adjMap,
+            int numCourses, int[] indegree) {
 
-      /*  visited[u] = true;
-        List<Integer> path = adjMap.get(u);
+        Queue<Integer> queue = new LinkedList<>();
+        int count = 0;
 
-        for (int v : path) {
+        for (int i = 0; i < indegree.length; i++) {
 
-            if (visited[v] && v == parent) {
-                return true;
+            if (indegree[i] == 0) {
+                queue.add(i);
+                count++;
+            }
+        }
 
-            } else if (!visited[v] && v != parent) {
-                DFS(adjMap, v, visited, u);
+        while (!queue.isEmpty()) {
+            int u = queue.poll();
+
+            for (Integer v : adjMap.get(u)) {
+
+                indegree[v]--;
+
+                if (indegree[v] == 0) {
+                    queue.add(v);
+                    count++;
+                }
             }
 
         }
-        return false;*/
+
+        if (count == numCourses)
+            return true;
+
         return false;
     }
+
 }

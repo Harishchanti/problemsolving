@@ -19,7 +19,7 @@ public class PermutaionOfString {
 		// Handling error scenarios
 		if (str == null) {
 			return null;
-		} else if (str.length() == 0) {
+		} else if (str.isEmpty()) {
 			perm.add("");
 			return perm;
 		}
