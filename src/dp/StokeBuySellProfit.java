@@ -95,6 +95,8 @@ public class StokeBuySellProfit {
     static int maxProfit(int price[],
                          int n, int k) {
 
+        // int price[] = {12, 14, 17, 10, 14, 13, 12, 15}; k = 2
+
         // table to store results of subproblems
         // profit[t][i] stores maximum profit
         // using atmost t transactions up to day

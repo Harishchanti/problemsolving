@@ -2,15 +2,48 @@ package string;
 
 public class SubSequenceOfAString {
 
-    public static void main(String[] args) {
-        String s = "ABC";
-        printSubsequenceOfaString(s,"");
+    static int maxSubsequenceSubString(String X, String Y,
+            int n, int m) {
+
+        // Base Case
+        if (n == 0 || m == 0)
+            return 0;
+
+        // Calls on smaller inputs
+        System.out.println("X.charAt(n - 1) : " + String.valueOf(
+                X.charAt(n - 1) + " and Y.charAt(m - 1) : " + String.valueOf(
+                        Y.charAt(m - 1))));
+        // if the last char of both Strings are equal
+        if (X.charAt(n - 1) == Y.charAt(m - 1)) {
+            return 1
+                    + maxSubsequenceSubString(X, Y, n - 1,
+                    m - 1);
+        }
+
+        // if the last char of both Strings are not equal
+        else {
+            return maxSubsequenceSubString(X, Y, n - 1, m);
+        }
     }
 
-    private static void printSubsequenceOfaString(String str,String result) {
-
-        System.out.println(result);
-
-        //for(int i =0;)
+    // Driver code
+    public static void main(String[] args) {
+        String X = "abcd";
+        String Y = "bacdbdcd";
+        int n = X.length(), m = Y.length();
+        int maximum_length
+                = 0; // as minimum length can be 0 only.
+        for (int i = 0; i <= m;
+             i++) // traversing for every length of Y.
+        {
+            int temp_ans
+                    = maxSubsequenceSubString(X, Y, n, i);
+            System.out.println("temp Sum " + temp_ans);
+            if (temp_ans > maximum_length)
+                maximum_length = temp_ans;
+        }
+        System.out.println(
+                "Length for maximum possible Subsequence of String X which is SubString of Y->"
+                        + maximum_length);
     }
 }
