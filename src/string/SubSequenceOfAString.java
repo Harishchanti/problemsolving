@@ -1,5 +1,8 @@
 package string;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SubSequenceOfAString {
 
     static int maxSubsequenceSubString(String X, String Y,
@@ -31,6 +34,8 @@ public class SubSequenceOfAString {
 
         // Initialize a variable to keep track of the maximum length
         int maxi = 0;
+        int startIndex =
+                0; // Initialize a variable to keep track of the starting index of the current subsequence substring
 
         // Outer loop to traverse through each character of Y
         for (int i = 0; i < M; i++) {
@@ -45,10 +50,18 @@ public class SubSequenceOfAString {
 
                 // Update the maximum length found so far
                 maxi = Math.max(maxi, t - i);
+
+                if ((t - i) > maxi) {
+                    startIndex =
+                            maxi = t - i;
+
+                }
+
             }
         }
 
         // Return the maximum length of the subsequence substring
+        //System.out.println();
         return maxi;
     }
 
@@ -72,6 +85,25 @@ public class SubSequenceOfAString {
         System.out.println(
                 "Length for maximum possible Subsequence of String X which is SubString of Y->"
                         + maximum_length);
+        String a = "abc";
+        List<String> result = new ArrayList<>();
+        printAllSubsequences(a, "", result);
+        result.stream().forEach(o -> System.out.print(o + " "));
+    }
 
+    private static void printAllSubsequences(String s,
+            String ans, List<String> result) {
+        if (s.isEmpty()) {
+            result.add(ans);
+            return;
+        }
+
+        // We add adding 1st character in string
+        printAllSubsequences(s.substring(1), ans + s.charAt(0), result);
+
+        // Not adding first character of the string
+        // because the concept of subsequence either
+        // character will present or not
+        printAllSubsequences(s.substring(1), ans, result);
     }
 }
