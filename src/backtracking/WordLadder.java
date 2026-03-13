@@ -7,6 +7,93 @@ https://www.geeksforgeeks.org/dsa/word-ladder-length-of-shortest-chain-to-reach-
  */
 public class WordLadder {
 
+    private static int DFS(String beginWord, String endWord, List<String> wordList,Map<String,Integer> map) {
+
+
+
+        if(beginWord.equals(endWord)) {
+            return 1;
+        }
+
+        map.put(beginWord,1);
+        int min = Integer.MAX_VALUE;
+
+        for(int i = 0 ; i < beginWord.length(); i++) {
+
+            char[] beginArr = beginWord.toCharArray();
+
+            char originalChar = beginArr[i];
+
+            for(char j = 'a' ; j <'z' ; j++) {
+
+                beginArr[i] = j;
+                String transformedStr = new String(beginArr);
+
+                if(map.containsKey(transformedStr) && map.get(transformedStr) == 0) {
+
+                    min = Math.min(min , 1 + DFS(transformedStr,endWord,wordList,map) );
+
+                }
+
+            }
+            beginArr[i] = originalChar;
+
+        }
+
+        map.put(beginWord,0);
+
+        return min;
+
+
+    }
+
+    public static int ladderLength(String beginWord, String endWord, List<String> wordList) {
+
+        Map<String,Integer> map = new HashMap<String,Integer>();
+
+        for(String word : wordList) {
+            map.put(word,0);
+        }
+
+        int result = DFSV2(beginWord,endWord,wordList,map);
+
+        return result != Integer.MAX_VALUE ? result : 0;
+
+    }
+
+    private static int DFSV2(String beginWord, String endWord, List<String> wordList,Map<String,Integer> map) {
+
+        if(beginWord.equals(endWord)) {
+            return 1;
+        }
+
+        map.put(beginWord,1);
+
+        int min = Integer.MAX_VALUE;
+
+        for(int i = 0 ; i < beginWord.length(); i++) {
+
+            char[] beginArr = beginWord.toCharArray();
+
+            char originalChar = beginArr[i];
+
+            for(char j = 'a' ; j <='z' ; j++) {
+                beginArr[i] = j;
+                String transformedStr = new String(beginArr);
+
+                if(map.containsKey(transformedStr) && map.get(transformedStr) == 0) {
+
+                    min = Math.min(min , 1 + DFSV2(transformedStr,endWord,wordList,map) );
+
+                }
+
+            }
+            beginArr[i] = originalChar;
+        }
+        map.put(beginWord,0);
+        return min;
+    }
+
     public static int minWordTransform(String start, String target,
             Map<String, Integer> mp) {
         // If start word is the same as target, no transformation is needed
@@ -74,8 +161,19 @@ public class WordLadder {
         String start = "toon";
         String target = "plea";
 
-        System.out.println(wordLadder(start, target, arrList));
-        System.out.println(wordLadderUsingBFS(start, target, arr));
+       // System.out.println(wordLadder(start, target, arrList));
+       // System.out.println(wordLadderUsingBFS(start, target, arr));
+
+        //  ["hot","dot","dog","lot","log","cog"]
+        // ["hot","dot","dog","lot","log"]
+
+        String start1 = "hit";
+        String target1 = "cog";
+
+        ArrayList<String> arrList1 = new ArrayList<>(Arrays.asList("hot","dot","dog","lot","log","cog"));
+
+        System.out.println(wordLadder(start1, target1, arrList1));
+        //System.out.println(ladderLength(start1, target1, arrList1));
     }
 
     static int wordLadderUsingBFS(String start, String target, String[] arr) {
