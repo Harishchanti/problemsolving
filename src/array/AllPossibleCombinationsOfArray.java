@@ -19,9 +19,7 @@ public class AllPossibleCombinationsOfArray {
             outPut.add(temp);
 
         }
-        outPut.forEach(o -> {
-            System.out.println(o);
-        });
+        outPut.forEach(System.out::println);
 
     }
 
