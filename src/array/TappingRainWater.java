@@ -13,8 +13,8 @@ public class TappingRainWater {
 
     public static void main(String[] args) {
         int[] height = { 4, 2, 0, 3, 2, 5 };// 9
-        int[] height1 = { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 }; // 6   // {0,0,1,0,1,2,1,0,0,1}
-
+        int[] height1 = { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2,
+                1 }; // 6
 
         //bruteforce approach (o) n2
         System.out.println(trapedWater(height));
@@ -24,6 +24,30 @@ public class TappingRainWater {
 
         //Expected approach O (n) and O (1) space
         System.out.println(maxWater(height1));
+
+        //Expected approach O (n) and O (1) space the Best and easy method
+        System.out.println(maxTrappedWater(height1));
+    }
+
+    private static int maxTrappedWater(int[] height) {
+        int leftMax = height[0];
+        int rightMax = height[height.length - 1];
+        int maxWater = 0;
+        int l = 1, r = height.length - 2;
+
+        while (l <= r) {
+            leftMax = Math.max(leftMax, height[l]);
+            rightMax = Math.max(rightMax, height[r]);
+
+            if (leftMax < rightMax) {
+                maxWater += leftMax - height[l];
+                l++;
+            } else {
+                maxWater += rightMax - height[r];
+                r--;
+            }
+        }
+        return maxWater;
     }
 
     private static int trapedWaterV2(int[] height1) {
@@ -32,19 +56,19 @@ public class TappingRainWater {
         int[] rightMax = new int[l];
 
         int max = height1[0];
-        for(int i = 0; i < height1.length ; i++) {
-            max =Math.max(max,height1[i]);
+        for (int i = 0; i < height1.length; i++) {
+            max = Math.max(max, height1[i]);
             leftMax[i] = max;
         }
 
-         max = height1[l-1];
-        for(int i = l-1; i >=0 ; i--) {
-            max = Math.max(max,height1[i]);
+        max = height1[l - 1];
+        for (int i = l - 1; i >= 0; i--) {
+            max = Math.max(max, height1[i]);
             rightMax[i] = max;
         }
         int result = 0;
-        for (int i=0;i < l;i++) {
-            result += Math.min(leftMax[i],rightMax[i]) - height1[i];
+        for (int i = 0; i < l; i++) {
+            result += Math.min(leftMax[i], rightMax[i]) - height1[i];
         }
         return result;
 
@@ -52,7 +76,7 @@ public class TappingRainWater {
 
     private static int trapedWater(int[] height) {
         int result = 0;
-        for (int i = 0; i < height.length ; i++) {
+        for (int i = 0; i < height.length; i++) {
 
             int leftMax = height[i];
             for (int j = i - 1; j >= 0; j--) {
@@ -64,8 +88,8 @@ public class TappingRainWater {
                 rightMax = Math.max(rightMax, height[j]);
             }
 
-            int minHight = Math.min(leftMax, rightMax)-height[i];
-           // 0,0,1,0,1,2,1,0,0,1
+            int minHight = Math.min(leftMax, rightMax) - height[i];
+            // 0,0,1,0,1,2,1,0,0,1
             result += minHight;
 
         }
