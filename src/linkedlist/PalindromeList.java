@@ -8,7 +8,7 @@ public class PalindromeList {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Node head = null;
-		List<String> a = Arrays.asList("a", "b", "c", "c", "b", "a", "l");
+		List<String> a = Arrays.asList("a", "b", "c", "b", "a");
 		head = create(a);
 		print(head);
 

@@ -162,7 +162,7 @@ public class WordLadder {
         String target = "plea";
 
        // System.out.println(wordLadder(start, target, arrList));
-       // System.out.println(wordLadderUsingBFS(start, target, arr));
+       System.out.println(wordLadderUsingBFS(start, target, arr));
 
         //  ["hot","dot","dog","lot","log","cog"]
         // ["hot","dot","dog","lot","log"]
@@ -230,7 +230,7 @@ public class WordLadder {
                     }
 
                     // Restore the original character
-                    wordArr[j] = ch;
+                    //wordArr[j] = ch;
                 }
             }
 
