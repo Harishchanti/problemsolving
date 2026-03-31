@@ -204,7 +204,7 @@ public class WordLadder {
                     // Retain the original character
                     // at the current position
                     char[] wordArr = word.toCharArray();
-                    char ch = wordArr[j];
+                    //char ch = wordArr[j];
 
                     // Replace the current character with
                     // every possible lowercase alphabet
