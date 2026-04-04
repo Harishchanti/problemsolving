@@ -4,7 +4,6 @@ import LLD.cache.exception.CacheTypeNoFoundException;
 import LLD.cache.service.Cache;
 import LLD.cache.service.CacheFactory;
 import LLD.cache.service.CacheType;
-import LLD.cache.service.TTLCache;
 
 public class TestCacheImpl {
     public static void main(String[] args)
