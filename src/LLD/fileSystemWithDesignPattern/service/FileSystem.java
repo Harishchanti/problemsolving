@@ -9,13 +9,17 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/*
+Singleton FileSystem
+*/
 public class FileSystem {
     private static final FileSystem INSTANCE = new FileSystem();
 
     private final DirectoryNode root = new DirectoryNode("/");
     private final StorageStrategy storage = new InMemoryStorage();
 
-    private FileSystem() {}
+    private FileSystem() {
+    }
 
     public static FileSystem getInstance() {
         return INSTANCE;
@@ -31,7 +35,8 @@ public class FileSystem {
 
         for (int i = 0; i < parts.length; i++) {
             String part = parts[i];
-            if (part.isEmpty()) continue;
+            if (part.isEmpty())
+                continue;
 
             FSNode next = curr.get(part);
 
@@ -40,9 +45,11 @@ public class FileSystem {
                 curr.add(next);
             }
 
-            if (next == null) throw new RuntimeException("Path not found");
+            if (next == null)
+                throw new RuntimeException("Path not found");
 
-            if (i == parts.length - 1) return next;
+            if (i == parts.length - 1)
+                return next;
 
             if (next.getType() != FileType.DIRECTORY)
                 throw new RuntimeException("Invalid path");
@@ -58,7 +65,8 @@ public class FileSystem {
 
     public void createFile(String path) {
         int idx = path.lastIndexOf("/");
-        DirectoryNode parent = (DirectoryNode) traverse(path.substring(0, idx), true);
+        DirectoryNode parent =
+                (DirectoryNode) traverse(path.substring(0, idx), true);
         String name = path.substring(idx + 1);
         parent.add(FSNodeFactory.createNode(name, FileType.FILE));
     }
@@ -80,13 +88,15 @@ public class FileSystem {
 
         DirectoryNode dir = (DirectoryNode) node;
         List<String> res = new ArrayList<>();
-        for (FSNode child : dir.list()) res.add(child.getName());
+        for (FSNode child : dir.list())
+            res.add(child.getName());
         return res;
     }
 
     public void delete(String path) {
         int idx = path.lastIndexOf("/");
-        DirectoryNode parent = (DirectoryNode) traverse(path.substring(0, idx), false);
+        DirectoryNode parent =
+                (DirectoryNode) traverse(path.substring(0, idx), false);
         parent.remove(path.substring(idx + 1));
     }
 
