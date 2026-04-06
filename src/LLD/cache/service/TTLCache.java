@@ -47,6 +47,8 @@ public class TTLCache<K, V> implements Cache<K, V> {
             map.remove(key);
             return null;
         }
+
+        // Update the expiry time on access if needed, depending on the desired behavior (e.g., reset expiry on access)
         return entryNode != null && !entryNode.isExpired() ? entryNode.value :
                 null;
     }
@@ -70,7 +72,7 @@ public class TTLCache<K, V> implements Cache<K, V> {
         return map.size();
     }
 
-    public CacheType getCacheType(){
+    public CacheType getCacheType() {
         return CacheType.TTL;
     }
 }
@@ -78,6 +80,10 @@ public class TTLCache<K, V> implements Cache<K, V> {
 class EntryNode<V> {
     V value;
     long expiryTime;
+
+    public void updateExpiryTime(long expiryTime) {
+        this.expiryTime = System.currentTimeMillis() + expiryTime;
+    }
 
     EntryNode(V value, long expiryTime) {
         this.value = value;
