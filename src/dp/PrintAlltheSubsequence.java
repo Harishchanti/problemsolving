@@ -8,7 +8,6 @@ public class PrintAlltheSubsequence {
         int[] a = { 1, 2, 3 };
         List<List<Integer>> res = new ArrayList<>();
 
-        //printSubSequence(a, 0, new StringBuilder());
         populateSubSequence(a, 0, new ArrayList<>(), res);
         for (List<Integer> outPut : res) {
             outPut.forEach(o -> System.out.print(o + " "));
