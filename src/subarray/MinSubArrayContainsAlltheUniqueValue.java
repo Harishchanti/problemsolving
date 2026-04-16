@@ -22,7 +22,7 @@ public class MinSubArrayContainsAlltheUniqueValue {
         boolean[] visited = new boolean[MAX_CHARS];
         Arrays.fill(visited, false);
         for (int i = 0; i < n; i++) {
-            if (visited[str.charAt(i)] == false) {
+            if (!visited[str.charAt(i)]) {
                 visited[str.charAt(i)] = true;
                 dist_count++;
             }
