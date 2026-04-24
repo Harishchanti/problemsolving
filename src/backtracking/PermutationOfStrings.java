@@ -31,9 +31,9 @@ public class PermutationOfStrings {
             return;
         }
         for (int i = idx; i < cArr.length; i++) {
-            swapChar(cArr, i, idx);
-            findAllPermutaions(cArr, idx + 1, result);
-            swapChar(cArr, i, idx);
+            swapChar(cArr, i, idx);// Do something
+            findAllPermutaions(cArr, idx + 1, result);// explore
+            swapChar(cArr, i, idx);// Undo
         }
     }
 
