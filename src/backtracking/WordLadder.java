@@ -178,7 +178,7 @@ public class WordLadder {
 
     static int wordLadderUsingBFS(String start, String target, String[] arr) {
 
-        // Set to keep track of unvisited words
+        // Set to keep track of unvisited queue
         Set<String> st = new HashSet<String>();
         for (int i = 0; i < arr.length; i++)
             st.add(arr[i]);
@@ -187,16 +187,16 @@ public class WordLadder {
         int res = 0;
         int m = start.length();
 
-        // Queue to store words to visit
-        Queue<String> words = new LinkedList<>();
-        words.add(start);
+        // Queue to store queue to visit
+        Queue<String> queue = new LinkedList<>();
+        queue.add(start);
 
-        while (!words.isEmpty()) {
-            int len = words.size();
+        while (!queue.isEmpty()) {
+            int len = queue.size();
             res++;
-            // Iterate through all words at the same level
+            // Iterate through all queue at the same level
             for (int i = 0; i < len; ++i) {
-                String word = words.poll();
+                String word = queue.poll();
 
                 // For every character of the word
                 for (int j = 0; j < m; ++j) {
@@ -226,7 +226,7 @@ public class WordLadder {
 
                         // And push the newly generated word
                         // which will be a part of the chain
-                        words.add(newWord);
+                        queue.add(newWord);
                     }
 
                     // Restore the original character
