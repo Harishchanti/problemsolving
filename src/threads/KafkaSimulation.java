@@ -1,4 +1,4 @@
-package company_interview;
+package threads;
 
 import java.util.*;
 import java.util.concurrent.*;
@@ -137,7 +137,7 @@ class ConsumerGroup {
 }
 
 // Main class
-public class BenzKafkaSimulation {
+public class KafkaSimulation {
     public static void main(String[] args) throws InterruptedException {
 
         Topic topic = new Topic(3);
