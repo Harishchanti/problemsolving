@@ -1,9 +1,6 @@
-package array;
+package dp;
 
-import java.util.ArrayList;
-import java.util.List;
-
-/*ROW's are childerns columns are toy pirice 
+/*ROW's are childerns columns are toy pirice
  get toys from each child such a way you get maximum price
 
  in :

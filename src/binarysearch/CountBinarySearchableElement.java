@@ -1,4 +1,4 @@
-package array;
+package binarysearch;
 
 public class CountBinarySearchableElement {
     static int countBinarySearchableIndex(int[] Arr, int l,

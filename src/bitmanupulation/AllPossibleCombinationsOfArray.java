@@ -1,4 +1,4 @@
-package array;
+package bitmanupulation;
 
 import java.util.ArrayList;
 import java.util.HashSet;
