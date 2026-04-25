@@ -3,13 +3,13 @@ package array;
 import java.util.Arrays;
 
 public class NextGreaterNumber {
-    static void swap(char ar[], int i, int j) {
-        char temp = ar[i];
+    static void swap(int ar[], int i, int j) {
+        int temp = ar[i];
         ar[i] = ar[j];
         ar[j] = temp;
     }
 
-    static void findNext(char ar[], int n) {
+    static void findNext(int ar[], int n) {
         int i;
 
         for (i = n - 1; i > 0; i--) {
@@ -23,7 +23,6 @@ public class NextGreaterNumber {
         } else {
             int x = ar[i - 1], min = i;
 
-
             for (int j = i + 1; j < n; j++) {
                 if (ar[j] > x && ar[j] < ar[min]) {
                     min = j;
@@ -34,12 +33,12 @@ public class NextGreaterNumber {
             System.out.print("Next number with same" +
                     " set of digits is ");
             for (i = 0; i < n; i++)
-                System.out.print(ar[i]);
+                System.out.print(ar[i] + " ");
         }
     }
 
     public static void main(String[] args) {
-        char digits[] = {'1', '2', '3', '4', '5'};
+        int digits[] = { 5, 4, 7, 5, 2, 3, 1 }; //  5 , 4, 7 , 5, 3, 1, 2
         int n = digits.length;
         findNext(digits, n);
     }

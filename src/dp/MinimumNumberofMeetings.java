@@ -1,4 +1,4 @@
-package leetcode_medium;
+package dp;
 
 import java.util.Arrays;
 import java.util.PriorityQueue;

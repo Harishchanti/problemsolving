@@ -1,4 +1,4 @@
-package array;
+package twopointer;
 
 public class SortArray012 {
 

@@ -1,4 +1,4 @@
-package leetcode_medium;
+package twopointer;
 
 // https://www.geeksforgeeks.org/trapping-rain-water/
 

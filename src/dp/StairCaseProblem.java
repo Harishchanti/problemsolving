@@ -1,4 +1,4 @@
-package array;
+package dp;
 
 //https://www.geeksforgeeks.org/count-ways-reach-nth-stair/
 public class StairCaseProblem {

@@ -1,4 +1,4 @@
-package array;
+package twoDArray;
 
 //https://www.geeksforgeeks.org/count-possible-paths-top-left-bottom-right-nxm-matrix/
 public class CountAllPossiblePath {

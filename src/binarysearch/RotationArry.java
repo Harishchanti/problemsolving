@@ -1,4 +1,4 @@
-package array;
+package binarysearch;
 
 //Binary search based question
 public class RotationArry {

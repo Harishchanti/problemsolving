@@ -1,9 +1,9 @@
-package array;
+package twopointer;
 
 public class LogestSubArrayWithoutDuplicates {
     public static void main(String[] args) {
 
-        String input = "abcabcbb";
+        String input = "abcbbcbb";
         System.out.println(lengthOfLongestSubstring(input));
 
     }

@@ -1,10 +1,9 @@
-package leetcode_medium;
+package dp;
 
 // https://www.geeksforgeeks.org/weighted-job-scheduling/
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class WeightedJobScheduler {
@@ -16,7 +15,7 @@ public class WeightedJobScheduler {
         jobList.add(new Job(6, 19, 100));
         jobList.add(new Job(2, 100, 20));
 
-        System.out.print(maxProfit(jobList));
+        System.out.println(maxProfit(jobList));
     }
 
     private static int maxProfit(List<Job> jobList) {

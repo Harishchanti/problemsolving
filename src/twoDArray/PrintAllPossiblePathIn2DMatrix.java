@@ -1,4 +1,4 @@
-package array;
+package twoDArray;
 
 /*
  * Input : 1 2 3

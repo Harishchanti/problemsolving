@@ -1,4 +1,4 @@
-package array;
+package twoDArray;
 
 public class ShortestPathFromorigintoAnycell {
 
@@ -7,7 +7,7 @@ public class ShortestPathFromorigintoAnycell {
 			{ 1, 2, 3 }, 
 			{ 4, 9, 2 }, 
 			{ 1, 5, 3 } };
-		System.out.println(findShortestPath(cost, 2, 2));// 1, 2, 2, 3
+		System.out.println(findShortestPath(cost, 2, 2));// 1, 2, 3, 2, 3
 
 	}
 

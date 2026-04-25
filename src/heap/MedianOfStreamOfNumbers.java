@@ -1,4 +1,4 @@
-package leetcode_medium;
+package heap;
 
 import java.util.Collections;
 import java.util.PriorityQueue;

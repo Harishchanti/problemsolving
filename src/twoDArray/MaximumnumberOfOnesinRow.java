@@ -1,4 +1,4 @@
-package array;
+package twoDArray;
 
 public class MaximumnumberOfOnesinRow {
 /*

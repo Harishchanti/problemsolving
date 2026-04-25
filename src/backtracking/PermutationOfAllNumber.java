@@ -1,4 +1,4 @@
-package array;
+package backtracking;
 
 // https://algorithms.tutorialhorizon.com/all-n-length-strings-from-given-string-of-length-k/
 public class PermutationOfAllNumber {
