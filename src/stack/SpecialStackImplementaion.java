@@ -10,7 +10,7 @@ class SpecialStackImplementaion extends Stack<Integer> {
 
     void push(int x) {
 
-        if (isEmpty() == true) {
+        if (isEmpty()) {
             super.push(x);
             min.push(x);
         } else {
