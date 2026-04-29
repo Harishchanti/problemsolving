@@ -73,5 +73,7 @@ public class ConsistentHashing<T> {
         System.out.println("User1 -> " + ch.getNode("User1"));
         System.out.println("User2 -> " + ch.getNode("User2"));
         System.out.println("User3 -> " + ch.getNode("User3"));
+
+        ch.printRing();
     }
 }
