@@ -34,41 +34,41 @@ public class CombinationSum {
 
     public static void main(String[] args) {
         // Input: candidates = [2,3,6,7], target = 7
-        int[] candidates = {2,3,6,7};
-        int target= 7;
-        combinationSum(candidates,target);
+        int[] candidates = { 2, 3, 6, 7 };
+        int target = 7;
+        combinationSum(candidates, target);
         result.forEach(System.out::println);
     }
 
+    public static List<List<Integer>> combinationSum(int[] candidates,
+            int target) {
 
-    public static  List<List<Integer>> combinationSum(int[] candidates, int target) {
-
-        findAllCombiantionSum(candidates,0,new ArrayList<Integer>(),target);
+        findAllCombinationSum(candidates, 0, new ArrayList<Integer>(), target);
 
         return result;
 
     }
 
-    static void findAllCombiantionSum(int[] a,int idx,List<Integer> curr,int target) {
+    static void findAllCombinationSum(int[] a, int idx, List<Integer> curr,
+            int target) {
 
-        if(target <0) {
+        if (target < 0) {
             return;
         }
-        if(target == 0) {
+        if (target == 0) {
             result.add(new ArrayList<>(curr));
             return;
         }
 
-        for(int i =idx ; i< a.length; i++) {
+        for (int i = idx; i < a.length; i++) {
 
             curr.add(a[i]);
 
-            findAllCombiantionSum(a,i,curr,target-a[i]);
+            findAllCombinationSum(a, i, curr, target - a[i]);
 
-            curr.remove(curr.size()-1);
+            curr.remove(curr.size() - 1);
 
         }
-
 
     }
 }
