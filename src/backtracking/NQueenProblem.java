@@ -12,7 +12,7 @@ Input:  n = 4
 Output: [[2, 4, 1, 3], [3, 1, 4, 2]]
 Explanation:  We mainly print column numbers (from first to last row) of every possible configuration.
 
- [[1, 3, 0, 2], [2, 0, 3, 1]]
+
  */
 public class NQueenProblem {
     public static void main(String[] args) {
@@ -50,7 +50,7 @@ public class NQueenProblem {
         for (int col = 0; col < board.length; col++) {
 
             if (iSafePosition(board, row, col)) {
-                board[row][col] = '$';// Do Somthing
+                board[row][col] = '$';// Do Something
 
                 solveNQueensUtiles(board, result, row + 1); // Explore more
 

@@ -40,12 +40,10 @@ public class CombinationSum {
         result.forEach(System.out::println);
     }
 
-    public static List<List<Integer>> combinationSum(int[] candidates,
+    public static void combinationSum(int[] candidates,
             int target) {
 
         findAllCombinationSum(candidates, 0, new ArrayList<Integer>(), target);
-
-        return result;
 
     }
 
