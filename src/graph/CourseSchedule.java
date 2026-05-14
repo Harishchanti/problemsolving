@@ -17,8 +17,8 @@ public class CourseSchedule {
 
         int[] indegree = new int[numCourses];
 
-        for(int i = 0; i< numCourses; i++) {
-            adjMap.put(i,new ArrayList<>());
+        for (int i = 0; i < numCourses; i++) {
+            adjMap.put(i, new ArrayList<>());
         }
 
         for (int i = 0; i < prerequisites.length; i++) {
@@ -32,8 +32,6 @@ public class CourseSchedule {
             indegree[v]++; // { { 0, 1 } };// 1 --> 0
             adjMap.put(u, list);
         }
-
-
 
         return isTopoligicalSort(adjMap, numCourses, indegree);
 
