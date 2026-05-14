@@ -11,7 +11,7 @@ public class PrintAllRepeatingNumberInArray {
 
     private static void printAllDuplicates(int[] a) {
         int n = a.length;
-        for (int i = 0; i < a.length; i++) {
+        for (int i = 0; i < n; i++) {
             int index = (a[i]) % n;
             a[index] += n;
         }

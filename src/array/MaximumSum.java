@@ -44,9 +44,9 @@ public class MaximumSum {
 	}
 
 	private int max(int i, int j, int z) {
-		int maxij = i > j ? i : j;
+		int maxij = Math.max(i, j);
 
-		return (maxij > z) ? maxij : z;
+		return Math.max(maxij, z);
 	}
 
 	// Driver program to test above functions

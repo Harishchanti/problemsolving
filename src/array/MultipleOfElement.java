@@ -6,6 +6,9 @@ public class MultipleOfElement {
 		int[] a = { 2, 3, 4, 5 };
 		multiplicationOfEle(a);
 
+        a = new int[] { 2, 3, 0, 5 };
+        multiplicationOfEle(a);
+
 	}
 
 	private static void multiplicationOfEle(int[] arr) {
@@ -25,7 +28,7 @@ public class MultipleOfElement {
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print(result[i] + " ");
 		}
-
-	}
+        System.out.println();
+    }
 
 }
