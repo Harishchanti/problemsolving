@@ -30,7 +30,7 @@ public class LogestIncreasingSubSequence {
             dp[i][p] = Math.max(include, exclude);
         }
 
-        return p != -1 ? dp[i][p] : Math.max(include, exclude);
+        return Math.max(include, exclude);
 
     }
 }
