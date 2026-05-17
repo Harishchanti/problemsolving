@@ -36,16 +36,30 @@ Explanation: The groups are "a" and "bbbbbbbbbbbb". This compresses to "ab12".
 public class StringCompression {
 
     public static void main(String[] args) {
-
+        int l = 0;
         char[] input = { 'a', 'a', 'b', 'b', 'c', 'c', 'c' };
-        System.out.println(compress(input));
+        l = compress(input);
+        //System.out.println(compress(input));
+        printArr(input, l);
 
         char[] input1 =
-                { 'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b' };
-        System.out.println(compress(input1));
+                { 'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b',
+                        'b' };
+        l = compress(input1);
+        //System.out.println(compress(input1));
+        printArr(input1, l);
 
         char[] input2 = { 'a' };
-        System.out.println(compress(input2));
+        l = compress(input2);
+        //System.out.println(compress(input2));
+        printArr(input2, l);
+    }
+
+    private static void printArr(char[] input, int l) {
+        for (int i = 0; i < l; i++) {
+            System.out.print(input[i] + " ");
+        }
+        System.out.println();
     }
 
     private static int compress(char[] chars) {
