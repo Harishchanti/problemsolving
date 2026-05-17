@@ -2,7 +2,7 @@ package dp;
 
 import java.util.Arrays;
 
-public class CountPalindromixSubString {
+public class CountPalindromicSubString {
     public static void main(String[] args) {
         String s = "aaa";
         System.out.println(
