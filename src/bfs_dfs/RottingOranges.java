@@ -35,41 +35,27 @@ public class RottingOranges {
             boolean flag = false;
             for (int q = 0; q < qSize; q++) {
 
-                IndexDetails indexDetails = queue.peek();
+                IndexDetails indexDetails = queue.poll();
                 int c = indexDetails.getC();
                 int r = indexDetails.getR();
+                int min = indexDetails.getMinutes();
 
-                if (isWithinLimit(grid, r, c + 1) && grid[r][c + 1] == 1) {
-                    grid[r][c + 1] = 2;
-                    queue.add(new IndexDetails(r, c + 1,
-                            indexDetails.getMinutes() + 1));
-                    flag = true;
+                int[][] dx = { { 0, 1 }, { -1, 0 }, { 1, 0 }, { 0, -1 } };
+
+                for (int[] d : dx) {
+                    int nx = r + d[0];
+                    int ny = c + d[1];
+
+                    if (isWithinLimit(grid, nx, ny) && grid[nx][ny] == 1) {
+                        grid[nx][ny] = 2;
+                        queue.add(new IndexDetails(nx, ny, min + 1));
+                        flag = true;
+                    }
                 }
 
-                if (isWithinLimit(grid, r, c - 1) && grid[r][c - 1] == 1) {
-                    grid[r][c - 1] = 2;
-                    queue.add(new IndexDetails(r, c - 1,
-                            indexDetails.getMinutes() + 1));
-                    flag = true;
-                }
-
-                if (isWithinLimit(grid, r + 1, c) && grid[r + 1][c] == 1) {
-                    grid[r + 1][c] = 2;
-                    queue.add(new IndexDetails(r + 1, c,
-                            indexDetails.getMinutes() + 1));
-                    flag = true;
-                }
-
-                if (isWithinLimit(grid, r - 1, c) && grid[r - 1][c] == 1) {
-                    grid[r - 1][c] = 2;
-                    queue.add(new IndexDetails(r - 1, c,
-                            indexDetails.getMinutes() + 1));
-                    flag = true;
-                }
-                indexDetails = queue.poll();
                 if (flag) {
                     minTimeIntervel = Math.max(minTimeIntervel,
-                            indexDetails.getMinutes());
+                            min);
                 }
 
             }

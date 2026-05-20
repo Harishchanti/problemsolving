@@ -8,7 +8,6 @@ public class BalancedParenthesis {
 			for (int i = 0; i < str.length; i++)
 				System.out.print(str[i]);
 			System.out.println();
-			return;
 		} else {
 			if (open > close) {
 				str[pos] = '}';
@@ -25,7 +24,6 @@ public class BalancedParenthesis {
 	static void printParenthesis(char str[], int n) {
 		if (n > 0)
 			_printParenthesis(str, 0, n, 0, 0);
-		return;
 	}
 
 	// driver program
