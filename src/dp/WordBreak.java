@@ -29,6 +29,7 @@ Output: false
  */
 public class WordBreak {
 
+    static Boolean[] memo = new Boolean[301];
     public static void main(String[] args) {
         String input = "catsandog";
         List<String> words = new ArrayList<>();
@@ -38,18 +39,17 @@ public class WordBreak {
         words.add("and");
         words.add("cat");
 
-        Boolean[] memo = new Boolean[301];
 
-        System.out.println(isWordBreakable(input, input.length(), words, memo));
+        System.out.println(isWordBreakable(input, input.length(), words));
     }
 
     private static boolean isWordBreakable(String input, int n,
-            List<String> words, Boolean[] memo) {
-        return isWordBreakableUtils(0, n, input, words, memo);
+            List<String> words) {
+        return isWordBreakableUtils(0, n, input, words);
     }
 
     private static boolean isWordBreakableUtils(int idx, int n, String input,
-            List<String> words, Boolean[] memo) {
+            List<String> words) {
 
         if (idx == n) {
             return true;
@@ -64,7 +64,7 @@ public class WordBreak {
             String part = input.substring(idx, end);
 
             if (words.contains(part) && isWordBreakableUtils(end, n, input,
-                    words, memo)) {
+                    words)) {
                 return memo[idx] = true;
             }
         }

@@ -32,7 +32,7 @@ public class HouseRobber2 {
     private static int[] nums;
 
     public static void main(String[] args) {
-        int[] nums = { 1, 2, 3 };
+        int[] nums = { 2,9,8,3,6};
         System.out.println(maxTheftIncircle(nums));
     }
 

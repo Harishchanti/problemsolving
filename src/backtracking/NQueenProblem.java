@@ -14,6 +14,11 @@ Explanation:  We mainly print column numbers (from first to last row) of every p
 
 
  */
+// Time Complexity: O(n!)
+//We try placing queens in different positions, and choices reduce at each step due to conflicts.
+//Auxiliary Space: O(n^2)
+//We use an n × n board and recursion stack for backtracking.
+
 public class NQueenProblem {
     public static void main(String[] args) {
         int n = 4;
