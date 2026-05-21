@@ -13,7 +13,8 @@ Output: "XY", "YX"
 Input: s = "AAA"
 Output: "AAA", "AAA", "AAA", "AAA", "AAA", "AAA" 
  */
-public class PermutationOfStrings {
+// O(n! * n) Time
+public class PermutationNCombinationOfStrings {
     public static void main(String[] args) {
         String input = "ABC";
         char[] cArr = input.toCharArray();
@@ -21,6 +22,7 @@ public class PermutationOfStrings {
         findAllPermutations(cArr, 0, result);
 
         result.forEach(System.out::println);
+        System.out.println("========================");
 
 
         /* A ,AB , ABC,  AC, B , BC,  C */

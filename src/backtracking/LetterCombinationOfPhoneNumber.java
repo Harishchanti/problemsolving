@@ -5,7 +5,12 @@ package backtracking;
 
 import java.util.ArrayList;
 import java.util.List;
+/*
+Time Complexity: O(4^n), where n is the length of the input array arr[], as each digit can map to a maximum of 4 letters (e.g., digit '7' maps to 'pqrs').
+Auxiliary Space: O(4^n), due to the space used by the queue and the result array, which store all possible combinations.
 
+
+ */
 public class LetterCombinationOfPhoneNumber {
 
     static String[] char_map =

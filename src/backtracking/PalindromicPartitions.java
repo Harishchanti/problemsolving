@@ -14,7 +14,9 @@ Example 2:
 Input: s = "a"
 Output: [["a"]]
  */
-
+/*
+[Naive Approach] Using Recursion - O(n*2^n) Time and O(n) Space
+ */
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

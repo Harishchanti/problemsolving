@@ -7,14 +7,18 @@ The word can be constructed from letters of sequentially adjacent cells, where a
 
 
  */
+/*
+Time Complexity: O(n*m * 4k), where n × m is the matrix size and k is the word length
+Auxiliary Space: O(k), due to recursion stack depth
+ */
 public class WordSearch {
 
     static int[][] dx = { { 1, 0 }, { 0, 1 }, { -1, 0 }, { 0, -1 } };
 
     public static void main(String[] args) {
-        char[][] board = {  { 'A', 'B', 'C', 'E' },
-                            { 'S', 'F', 'C', 'S' },
-                            { 'A', 'D', 'E', 'E' } };
+        char[][] board = { { 'A', 'B', 'C', 'E' },
+                { 'S', 'F', 'C', 'S' },
+                { 'A', 'D', 'E', 'E' } };
         String word = "ABCCED";
         System.out.println(isExist(board, word));
 
@@ -40,12 +44,12 @@ public class WordSearch {
     private static boolean wordPossible(char[][] b, int i, int j, int m, int n,
             String word, int idx) {
 
-        if (idx == word.length()) {
-            return true;
-        }
-
         if (i < 0 || j < 0 || i >= m || j >= n || b[i][j] == '$') {
             return false;
+        }
+
+        if (idx == word.length()) {
+            return true;
         }
 
         if (b[i][j] != word.charAt(idx)) {
