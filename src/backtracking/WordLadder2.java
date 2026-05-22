@@ -19,11 +19,10 @@ public class WordLadder2 {
         String end = "cog";
         List<String> wordList =
                 Arrays.asList("hot", "dot", "dog", "lot", "log", "cog");
-        Set<String> set = new HashSet<String>(wordList);
 
         List<List<String>> result =
                 getAllPossibleTransformations(start, end,
-                        set);
+                        wordList);
 
         for (List<String> list : result) {
             for (String s : list) {
@@ -34,49 +33,98 @@ public class WordLadder2 {
 
     }
 
-    static List<List<String>> getAllPossibleTransformations(String start,
-            String end, Set<String> set) {
+    static List<List<String>> getAllPossibleTransformations(String beginWord,
+            String endWord, List<String> wordList) {
 
-        Map<String, List<String>> adjMap = new HashMap<>();
+        /**
+         * Find all shortest transformation sequences from beginWord to endWord.
+         * Uses BFS to build distance map, then DFS to enumerate all shortest paths.
+         */
+        // Convert wordList to Set for O(1) lookup
+        Set<String> wordSet = new HashSet<>(wordList);
 
-        List<List<String>> result = new ArrayList<>();
+        // If endWord not in wordList, no transformation possible
+        if (!wordSet.contains(endWord)) {
+            return new ArrayList<>();
+        }
 
-        Queue<String> q = new LinkedList<String>();
-        q.add(start);
+        // BFS Phase: Build distance map showing shortest distance from beginWord
+        Queue<String> queue = new LinkedList<>();
+        queue.offer(beginWord);
+        Map<String, Integer> distances = new HashMap<>();
+        distances.put(beginWord, 0);
 
-        while (!q.isEmpty()) {
-            int l = q.size();
-            String ele = q.poll();
+        while (!queue.isEmpty()) {
+            String currentWord = queue.poll();
+            int currentDistance = distances.get(currentWord);
 
-            for (int j = 0; j < l; j++) {
+            // Try all one-letter transformations
+            for (int i = 0; i < currentWord.length(); i++) {
 
-                adjMap.computeIfAbsent(ele, k -> new ArrayList<>());
-
-                char[] temp = ele.toCharArray();
-
-                for (int i = 0; i < temp.length; i++) {
-
-                    char cr = temp[i];
-
-                    for (char c = 'a'; c <= 'z'; c++) {
-
-                        temp[i] = c;
-                        String itermStr = String.valueOf(temp);
-
-                        if (!set.contains(itermStr) || end.equalsIgnoreCase(
-                                itermStr) || ele.equalsIgnoreCase(
-                                itermStr) || adjMap.containsKey(itermStr)) {
-                            continue;
-                        }
-
-                        adjMap.get(ele).add(itermStr);
-                        q.add(itermStr);
-
+                for (char c = 'a'; c <= 'z'; c++) {
+                    if (c == currentWord.charAt(i)) {
+                        continue;
                     }
-                    temp[i] = cr;
+
+                    // Generate neighbor word
+                    String neighbor = currentWord.substring(0,
+                            i) + c + currentWord.substring(i + 1);
+
+
+                    // If neighbor is in wordSet and not visited
+                    if (wordSet.contains(neighbor) && !distances.containsKey(
+                            neighbor)) {
+                        distances.put(neighbor, currentDistance + 1);
+                        queue.offer(neighbor);
+                    }
                 }
             }
         }
-        return result;
+
+        // If endWord not reached, return empty list
+        if (!distances.containsKey(endWord)) {
+            return new ArrayList<>();
+        }
+
+        // DFS Phase: Backtrack from endWord to beginWord using distance map
+        List<List<String>> allPaths = new ArrayList<>();
+        List<String> currentPath = new ArrayList<>();
+        currentPath.add(endWord);
+
+        backtrack(endWord, beginWord, distances, currentPath, allPaths);
+        return allPaths;
+    }
+
+    private static void backtrack(String word, String beginWord,
+            Map<String, Integer> distances,
+            List<String> path, List<List<String>> allPaths) {
+        // Base case: reached beginWord
+        if (word.equals(beginWord)) {
+            List<String> result = new ArrayList<>(path);
+            Collections.reverse(result);
+            allPaths.add(result);
+            return;
+        }
+
+        // Try all one-letter transformations
+        for (int i = 0; i < word.length(); i++) {
+            for (char c = 'a'; c <= 'z'; c++) {
+                if (c == word.charAt(i)) {
+                    continue;
+                }
+
+                // Generate neighbor word
+                String neighbor =
+                        word.substring(0, i) + c + word.substring(i + 1);
+
+                // Only follow edges to words with distance exactly 1 less
+                if (distances.containsKey(neighbor) && distances.get(
+                        neighbor) == distances.get(word) - 1) {
+                    path.add(neighbor);
+                    backtrack(neighbor, beginWord, distances, path, allPaths);
+                    path.remove(path.size() - 1);
+                }
+            }
+        }
     }
 }
