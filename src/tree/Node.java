@@ -1,5 +1,7 @@
 package tree;
 
+import java.util.Objects;
+
 public class Node {
 
 	int n;
@@ -34,4 +36,17 @@ public class Node {
 	public void setRight(Node right) {
 		this.right = right;
 	}
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Node))
+            return false;
+        Node node = (Node) o;
+        return n == node.n;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(n);
+    }
 }

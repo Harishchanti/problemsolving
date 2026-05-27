@@ -27,20 +27,23 @@ public class PathSum3 {
     }
 
     static int countPathsFromNode(Node node, int k, int currentSum) {
-        if (node == null)
+        if (node == null || currentSum > k)
             return 0;
 
         int pathCount = 0;
         currentSum += node.n;
 
-        if (currentSum == k)
-            pathCount++;
+        if (currentSum == k){
+            return 1;
+        }
+            //pathCount++;
+
 
         // Recur for the left and right subtree
-        pathCount += countPathsFromNode(node.left, k, currentSum);
-        pathCount += countPathsFromNode(node.right, k, currentSum);
+       // pathCount += countPathsFromNode(node.left, k, currentSum);
+        //pathCount += countPathsFromNode(node.right, k, currentSum);
 
-        return pathCount;
+        return  countPathsFromNode(node.left, k, currentSum) + countPathsFromNode(node.right, k, currentSum);
     }
 
     // Function to count all paths
