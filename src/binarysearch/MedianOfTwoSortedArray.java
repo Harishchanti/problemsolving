@@ -22,9 +22,9 @@ public class MedianOfTwoSortedArray {
 			// if partitionX is length of input then there is nothing on right
 			// side. Use +INF for minRightX
 			int maxLeftX = (partitionX == 0) ? Integer.MIN_VALUE : input1[partitionX - 1];
-			int minRightX = (partitionX == x) ? Integer.MAX_VALUE : input1[partitionX];
+            int maxLeftY = (partitionY == 0) ? Integer.MIN_VALUE : input2[partitionY - 1];
 
-			int maxLeftY = (partitionY == 0) ? Integer.MIN_VALUE : input2[partitionY - 1];
+			int minRightX = (partitionX == x) ? Integer.MAX_VALUE : input1[partitionX];
 			int minRightY = (partitionY == y) ? Integer.MAX_VALUE : input2[partitionY];
 
 			if (maxLeftX <= minRightY && maxLeftY <= minRightX) {

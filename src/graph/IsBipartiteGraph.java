@@ -81,9 +81,7 @@ public class IsBipartiteGraph {
         }
         for (int i = 0; i < graph.length; i++) {
             for (int j = 0; j < graph[i].length; j++) {
-                List<Integer> list = map.get(i);
-                list.add(graph[i][j]);
-                map.put(i, list);
+                map.get(i).add(graph[i][j]);
             }
         }
 
