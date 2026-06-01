@@ -37,6 +37,7 @@ public class PermutationNCombinationOfStrings {
             result.add(new String(cArr));
             return;
         }
+
         for (int i = idx; i < cArr.length; i++) {
             swapChar(cArr, i, idx);// Do something
             findAllPermutations(cArr, idx + 1, result);// explore

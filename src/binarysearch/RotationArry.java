@@ -9,7 +9,8 @@ public class RotationArry {
 		int n = 2;
 		int m = 5;
 		System.out.println("Element " + n + " Found at index " + findElement(a, n));
-		System.out.println("Point of Rotaion of Sorted array : " + finddPointOfRotation(a));
+        int[] c = { 4,5,6,7};
+ 		System.out.println("Point of Rotaion of Sorted array : " + finddPointOfRotation(c));
 		System.out.println("Maximum number of occurence element : " + getNoOfOccurrence(b, m));
 
 	}

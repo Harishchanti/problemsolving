@@ -53,8 +53,8 @@ public class MedianOfTwoSortedArray {
 	}
 
 	public static void main(String[] args) {
-		int[] x = { 1, 3, 8, 9, 15 };
-		int[] y = { 7, 11, 19, 21, 18, 25 };
+		int[] x = { };
+		int[] y = { 1 };
 
 		MedianOfTwoSortedArray mm = new MedianOfTwoSortedArray();
 		System.out.println(mm.findMedianSortedArrays(x, y));

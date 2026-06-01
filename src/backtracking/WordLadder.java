@@ -170,9 +170,13 @@ public class WordLadder {
         String start1 = "hit";
         String target1 = "cog";
 
-        ArrayList<String> arrList1 = new ArrayList<>(Arrays.asList("hot","dot","dog","lot","log","cog"));
+        String[] arrList1 = {"hit","cog"};
 
-        System.out.println(wordLadder(start1, target1, arrList1));
+        //beginWord="hit"
+        //endWord="cog"
+        //wordList=["hot","dot","dog","lot","log","cog"]
+
+        System.out.println(wordLadderUsingBFS(start1, target1, arrList1));
         //System.out.println(ladderLength(start1, target1, arrList1));
     }
 
