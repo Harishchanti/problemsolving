@@ -31,9 +31,9 @@ public class PrintingNumbers {
 		public void run() {
 			try {
 				while (count <= 10) {
-					synchronized (object) {
+					//synchronized (object) {
 						if (threadId != threadIdToRun) {
-							object.wait();
+							//object.wait();
 						} else {
 							System.out.println("Thread " + threadId + " printed " + count);
 							count += 1;
@@ -45,9 +45,9 @@ public class PrintingNumbers {
 							else if (threadId == 3)
 								threadIdToRun = 1;
 
-							object.notifyAll();
+							//object.notifyAll();
 						}
-					}
+					//}
 				}
 			} catch (Exception e) {
 				e.printStackTrace();

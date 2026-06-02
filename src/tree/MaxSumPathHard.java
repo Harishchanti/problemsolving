@@ -9,7 +9,7 @@ The path sum of a path is the sum of the node's values in the path.
  */
 
 // Leetcode hard
-public class MaxSumPath {
+public class MaxSumPathHard {
 
     static class TreeNode {
         int val;

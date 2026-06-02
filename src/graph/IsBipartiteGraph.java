@@ -63,7 +63,7 @@ public class IsBipartiteGraph {
 
             if (colors[v] == -1) {// never colord or never visted.
 
-                int newColor = 1 - color;//(color == 0) ? 1 : color;
+                int newColor = 1 - color;//(color == 0) ? 1 : 0;
 
                 if (!checkIfBipartite(adjMap, newColor, v, colors)) {
                     return false;

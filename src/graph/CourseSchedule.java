@@ -26,11 +26,12 @@ public class CourseSchedule {
             int v = prerequisites[i][0];
             int u = prerequisites[i][1];
 
-            list = adjMap.get(u);
-            list.add(v);
+            adjMap.get(u).add(v);
+            //list = adjMap.get(u);
+            //list.add(v);
 
             indegree[v]++; // { { 0, 1 } };// 1 --> 0
-            adjMap.put(u, list);
+           // adjMap.put(u, list);
         }
 
         return isTopoligicalSort(adjMap, numCourses, indegree);
