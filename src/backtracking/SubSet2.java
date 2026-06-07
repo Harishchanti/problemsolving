@@ -20,7 +20,7 @@ Output: [[],[7], [7,7]]
  */
 // [Naive Approach] Using Recursion – O(2^n) Time and O(n) Space
 public class SubSet2 {
-    static List<List<Integer>> result = new ArrayList<>();
+    static Set<List<Integer>> result = new HashSet<>();
 
     public static void main(String[] args) {
         int[] nums = { 1, 2, 1 };
@@ -43,20 +43,16 @@ public class SubSet2 {
     }
 
     static void findSubset(int[] nums, int pos, List<Integer> current) {
-
-        if (result.contains(current)) {
+        if (pos >= nums.length) {
+            result.add(new ArrayList<>(current));
             return;
         }
 
-        result.add(new ArrayList<>(current));
+        current.add(nums[pos]);
+        findSubset(nums, pos + 1, current);
 
-        for (int i = pos; i < nums.length; i++) {
-            current.add(nums[i]);
-
-            findSubset(nums, i + 1, current);
-
-            current.remove(current.size() - 1);
-        }
+        current.remove(current.size() - 1);
+        findSubset(nums, pos + 1, current);
 
     }
 }

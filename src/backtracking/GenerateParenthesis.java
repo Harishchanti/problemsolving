@@ -17,6 +17,8 @@ public class GenerateParenthesis {
     static void generateParenthesisUtil(int n, int open, int close,
             String str) {
 
+        if(close>open) return;
+
         if (str.length() == 2 * n) {
             result.add(str);
             return;

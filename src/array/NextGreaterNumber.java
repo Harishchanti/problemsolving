@@ -7,7 +7,7 @@ public class NextGreaterNumber {
         int temp = ar[i];
         ar[i] = ar[j];
         ar[j] = temp;
-    }
+    }//  1 2 3 4 5 => 12354  5, 4, 5, 7, 4, 3, 1  => 5 ,4,7,5,4,3,1 = > 5,4,7 1,3,4,5
 
     static void findNext(int[] ar, int n) {
         int i;
@@ -21,14 +21,7 @@ public class NextGreaterNumber {
         if (i == 0) {
             System.out.println("Not possible");
         } else {
-            int x = ar[i - 1], min = i;
-
-            for (int j = i + 1; j < n; j++) {
-                if (ar[j] > x && ar[j] < ar[min]) {
-                    min = j;
-                }
-            }
-            swap(ar, i - 1, min);
+            swap(ar, i - 1, i);
             Arrays.sort(ar, i, n);
             System.out.print("Next number with same" +
                     " set of digits is ");
@@ -38,7 +31,7 @@ public class NextGreaterNumber {
     }
 
     public static void main(String[] args) {
-        int[] digits = { 5, 4, 7, 5, 2, 3, 1 }; //  5 , 4, 7 , 5, 3, 1, 2
+        int[] digits = { 5 , 4, 7 , 5, 3, 1, 2 }; //  5 , 4, 7 , 5, 3, 1, 2
         int n = digits.length;
         findNext(digits, n);
     }

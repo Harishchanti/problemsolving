@@ -40,6 +40,7 @@ public class CombinationSum2 {
     public static void main(String[] args) {
         int[] candidates = { 9, 2, 2, 4, 6, 1, 5 };
         int target = 8;
+        System.out.println(System.currentTimeMillis());
         combinationSum2(candidates, target);
 
         result.forEach(r -> {

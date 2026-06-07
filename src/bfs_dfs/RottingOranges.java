@@ -6,7 +6,7 @@ import java.util.Queue;
 public class RottingOranges {
     public static void main(String[] args) {
         //int[][] grid = { { 2, 1, 1 }, { 0, 1, 1 }, { 1, 0, 1 } }; // -1
-        int[][] grid = { { 2, 1, 1 }, { 1, 1, 0 }, { 0, 1, 1 } }; // 4
+        int[][] grid = {{0,2}};//{ { 2, 1, 1 }, { 1, 1, 0 }, { 0, 1, 1 } }; // 4
         //int[][] grid = { { 2, 0 }}; // -1
         System.out.println(orangesRottingV2(grid));
     }
@@ -29,7 +29,7 @@ public class RottingOranges {
                 }
             }
         }
-
+//  grid=[[2,1,1],[0,1,1],[1,0,1]]
         while (!queue.isEmpty()) {
             int qSize = queue.size();
             boolean flag = false;
