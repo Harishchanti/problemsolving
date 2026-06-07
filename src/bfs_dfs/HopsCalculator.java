@@ -24,10 +24,10 @@ public class HopsCalculator {
             int endNode) {
         Queue<Integer> queue = new LinkedList<>();
         Map<Integer, Integer> distances = new HashMap<>();
-        Set<Integer> visited = new HashSet<>();
+       // Set<Integer> visited = new HashSet<>();
 
         queue.add(startNode);
-        visited.add(startNode);
+       // visited.add(startNode);
         distances.put(startNode, 0);
 
         while (!queue.isEmpty()) {
@@ -40,8 +40,7 @@ public class HopsCalculator {
 
             for (int neighbor : adj.getOrDefault(currentNode,
                     Collections.emptyList())) {
-                if (!visited.contains(neighbor)) {
-                    visited.add(neighbor);
+                if (!distances.containsKey(neighbor)) {
                     distances.put(neighbor, distances.get(currentNode) + 1);
                     queue.add(neighbor);
                 }

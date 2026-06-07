@@ -23,7 +23,7 @@ public class SubSet2 {
     static Set<List<Integer>> result = new HashSet<>();
 
     public static void main(String[] args) {
-        int[] nums = { 1, 2, 1 };
+        int[] nums = { 1,2,3 };
         subsetsWithDup(nums);
         result.forEach(r -> {
             r.forEach(g -> System.out.print(g + " "));

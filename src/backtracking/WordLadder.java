@@ -7,31 +7,32 @@ https://www.geeksforgeeks.org/dsa/word-ladder-length-of-shortest-chain-to-reach-
  */
 public class WordLadder {
 
-    private static int DFS(String beginWord, String endWord, List<String> wordList,Map<String,Integer> map) {
+    private static int DFS(String beginWord, String endWord,
+            List<String> wordList, Map<String, Integer> map) {
 
-
-
-        if(beginWord.equals(endWord)) {
+        if (beginWord.equals(endWord)) {
             return 1;
         }
 
-        map.put(beginWord,1);
+        map.put(beginWord, 1);
         int min = Integer.MAX_VALUE;
 
-        for(int i = 0 ; i < beginWord.length(); i++) {
+        for (int i = 0; i < beginWord.length(); i++) {
 
             char[] beginArr = beginWord.toCharArray();
 
             char originalChar = beginArr[i];
 
-            for(char j = 'a' ; j <'z' ; j++) {
+            for (char j = 'a'; j < 'z'; j++) {
 
                 beginArr[i] = j;
                 String transformedStr = new String(beginArr);
 
-                if(map.containsKey(transformedStr) && map.get(transformedStr) == 0) {
+                if (map.containsKey(transformedStr) && map.get(
+                        transformedStr) == 0) {
 
-                    min = Math.min(min , 1 + DFS(transformedStr,endWord,wordList,map) );
+                    min = Math.min(min,
+                            1 + DFS(transformedStr, endWord, wordList, map));
 
                 }
 
@@ -40,57 +41,60 @@ public class WordLadder {
 
         }
 
-        map.put(beginWord,0);
+        map.put(beginWord, 0);
 
         return min;
 
-
     }
 
-    public static int ladderLength(String beginWord, String endWord, List<String> wordList) {
+    public static int ladderLength(String beginWord, String endWord,
+            List<String> wordList) {
 
-        Map<String,Integer> map = new HashMap<String,Integer>();
+        Map<String, Integer> map = new HashMap<String, Integer>();
 
-        for(String word : wordList) {
-            map.put(word,0);
+        for (String word : wordList) {
+            map.put(word, 0);
         }
 
-        int result = DFSV2(beginWord,endWord,wordList,map);
+        int result = DFSV2(beginWord, endWord, wordList, map);
 
         return result != Integer.MAX_VALUE ? result : 0;
 
     }
 
-    private static int DFSV2(String beginWord, String endWord, List<String> wordList,Map<String,Integer> map) {
+    private static int DFSV2(String beginWord, String endWord,
+            List<String> wordList, Map<String, Integer> map) {
 
-        if(beginWord.equals(endWord)) {
+        if (beginWord.equals(endWord)) {
             return 1;
         }
 
-        map.put(beginWord,1);
+        map.put(beginWord, 1);
 
         int min = Integer.MAX_VALUE;
 
-        for(int i = 0 ; i < beginWord.length(); i++) {
+        for (int i = 0; i < beginWord.length(); i++) {
 
             char[] beginArr = beginWord.toCharArray();
 
             char originalChar = beginArr[i];
 
-            for(char j = 'a' ; j <='z' ; j++) {
+            for (char j = 'a'; j <= 'z'; j++) {
                 beginArr[i] = j;
                 String transformedStr = new String(beginArr);
 
-                if(map.containsKey(transformedStr) && map.get(transformedStr) == 0) {
+                if (map.containsKey(transformedStr) && map.get(
+                        transformedStr) == 0) {
 
-                    min = Math.min(min , 1 + DFSV2(transformedStr,endWord,wordList,map) );
+                    min = Math.min(min,
+                            1 + DFSV2(transformedStr, endWord, wordList, map));
 
                 }
 
             }
             beginArr[i] = originalChar;
         }
-        map.put(beginWord,0);
+        map.put(beginWord, 0);
         return min;
     }
 
@@ -161,8 +165,8 @@ public class WordLadder {
         String start = "toon";
         String target = "plea";
 
-       // System.out.println(wordLadder(start, target, arrList));
-       System.out.println(wordLadderUsingBFS(start, target, arr));
+        // System.out.println(wordLadder(start, target, arrList));
+        System.out.println(wordLadderUsingBFS(start, target, arr));
 
         //  ["hot","dot","dog","lot","log","cog"]
         // ["hot","dot","dog","lot","log"]
@@ -170,7 +174,7 @@ public class WordLadder {
         String start1 = "hit";
         String target1 = "cog";
 
-        String[] arrList1 = {"hit","cog"};
+        String[] arrList1 = { "hit", "cog" };
 
         //beginWord="hit"
         //endWord="cog"
@@ -205,16 +209,15 @@ public class WordLadder {
                 // For every character of the word
                 for (int j = 0; j < m; ++j) {
 
-                    // Retain the original character
-                    // at the current position
-                    char[] wordArr = word.toCharArray();
-                    //char ch = wordArr[j];
-
-                    // Replace the current character with
-                    // every possible lowercase alphabet
                     for (char c = 'a'; c <= 'z'; ++c) {
-                        wordArr[j] = c;
-                        String newWord = new String(wordArr);
+
+                        if (c == word.charAt(j)) {
+                            continue;
+                        }
+
+                        String newWord =
+                                word.substring(0, j) + c + word.substring(
+                                        j + 1);
 
                         // Skip the word if already added
                         // or not present in set
@@ -233,8 +236,6 @@ public class WordLadder {
                         queue.add(newWord);
                     }
 
-                    // Restore the original character
-                    //wordArr[j] = ch;
                 }
             }
 
