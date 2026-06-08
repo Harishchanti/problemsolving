@@ -23,7 +23,7 @@ h=4
         int l = 1, r = max;
 
         while (l < r) {
-            int mid = l + (r - l) / 2;
+            int mid = (l + r) / 2;
 
             if (canEatBanans(piles, mid, h)) {
                 r = mid;

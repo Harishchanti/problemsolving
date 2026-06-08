@@ -14,7 +14,7 @@ public class TotalNumberOfHillAndVally {
         int max = subSetSumOfLength(n,k);
         int maxL = subSetSumOfLength(n,l);
         //return max + maxL;
-        //System.out.println(count(a));
+        System.out.println(count(a));
     }
 
     private static int  subSetSumOfLength(int[] a, int k) {

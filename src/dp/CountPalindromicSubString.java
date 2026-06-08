@@ -1,6 +1,7 @@
 package dp;
 
 import java.util.Arrays;
+import java.util.Map;
 
 public class CountPalindromicSubString {
     public static void main(String[] args) {
@@ -10,6 +11,34 @@ public class CountPalindromicSubString {
 
         System.out.println(
                 countPS(s));
+
+        System.out.println(PalindromicBluePrint(s));
+    }
+
+    private static int PalindromicBluePrint(String s) {
+        int n = s.length(), maxLength = 0;
+        boolean[][] t = new boolean[n][n];
+
+        for (int l = 1; l <= n; l++) {
+
+            for (int i = 0; i + l - 1 < n; i++) {
+                int j = i + l - 1;
+
+                if (i == j) {
+                    t[i][j] = true;
+                } else if (i + 1 == j) {
+                    t[i][j] = (s.charAt(i) == s.charAt(j));
+                } else {
+                    t[i][j] = ((s.charAt(i) == s.charAt(j) && t[i + 1][j - 1]));
+                }
+
+                if (t[i][j]) {
+                    maxLength = Math.max(maxLength, j - i + 1);
+                }
+            }
+
+        }
+        return maxLength;
     }
 
     private static int countSimpleApproch(String s) {

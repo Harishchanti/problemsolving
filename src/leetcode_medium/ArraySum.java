@@ -24,6 +24,9 @@ public class ArraySum {
         // {1,2,5,8,9,10} , and queries = List<List<Integer>> queries= [[2,5],[3,5]];
         //output=list<Integer> =[32,27]
     }
+// 1, 2, 5, 8, 9, 10
+// 1, 3, 8, 16, 25,35
+// =>35-8
 
     private static List<Integer> findSumBetweenIndex(int[] a, List<List<Integer>> l) {
         List<Integer> output = new ArrayList<>();

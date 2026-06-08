@@ -47,7 +47,7 @@ public class CoineChange {
         // take a coin only if its value
         // is greater than 0.
         if (coins[i] > 0) {
-            take = coinChangeUtil(i, coins, amount - coins[i]);
+            take = 1 + coinChangeUtil(i, coins, amount - coins[i]);
             if (take != Integer.MAX_VALUE)
                 take++;
         }
