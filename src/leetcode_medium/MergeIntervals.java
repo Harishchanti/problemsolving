@@ -49,7 +49,12 @@ public class MergeIntervals {
 
     private static int[][] mergeIntervalsV2(int[][] intervals) {
 
-        int MAX = 10000;
+        //Arrays.stream(intervals).max((o1, o2) -> {return o1[1]-o2[1];});
+        int MAX=0;
+        for (int[] a:intervals) {
+          MAX = Math.max(MAX,a[1]);
+        }
+        //int MAX = 10000;
 
         // For each start, store the farthest end
         int[] maxEndAtStart = new int[MAX + 1];
@@ -59,6 +64,7 @@ public class MergeIntervals {
             int s = it[0], e = it[1];
             hasStart[s] = true;
             maxEndAtStart[s] = Math.max(maxEndAtStart[s], e);
+
         }
 
         List<int[]> result = new ArrayList<>();
