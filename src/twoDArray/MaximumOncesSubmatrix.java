@@ -16,7 +16,7 @@ public class MaximumOncesSubmatrix {
 
     private static void findMaxmatrix(int[][] a, int m, int n) {
         int i = 0, j = 0;
-        int s[][] = new int[m][n];
+        int[][] s = new int[m][n];
         int max = 0;
         for (i = 0; i < m; i++) {
             s[i][0] = a[i][0];

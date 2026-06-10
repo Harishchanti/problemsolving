@@ -48,7 +48,7 @@ public class PrintAllTheNodeKDdistenceFromtheTargetNode {
 
     private static List<Integer> KDistanceNodes(Node root, int target, int k) {
         Map<Node, Node> chaildParentMap = new HashMap<>();
-        Node targetNode = getChaildParentMap(root, null, chaildParentMap, target);
+        Node targetNode = getChaildParentMap(root,  chaildParentMap, target);
         Queue<Node> queue = new LinkedList<>();
         List<Node> visited = new ArrayList<>();
 
@@ -91,7 +91,7 @@ public class PrintAllTheNodeKDdistenceFromtheTargetNode {
         return new ArrayList<>();
     }
 
-    private static Node getChaildParentMap(Node root, Node parent,
+    private static Node getChaildParentMap(Node root,
             Map<Node, Node> chaildParentMap, int k) {
         if (root == null) {
             return root;
@@ -100,12 +100,12 @@ public class PrintAllTheNodeKDdistenceFromtheTargetNode {
         Node left = null , right = null;
         if(root.left != null) {
             chaildParentMap.put(root.left, root);
-            left = getChaildParentMap(root.left, root, chaildParentMap, k);
+            left = getChaildParentMap(root.left, chaildParentMap, k);
         }
 
         if(root.right != null) {
             chaildParentMap.put(root.right, root);
-            right = getChaildParentMap(root.right, root, chaildParentMap, k);
+            right = getChaildParentMap(root.right, chaildParentMap, k);
         }
 
 

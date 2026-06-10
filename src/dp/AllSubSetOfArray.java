@@ -17,7 +17,7 @@ public class AllSubSetOfArray {
             ArrayList<Integer> temp) {
 
         if (idx >= intput.length) {
-            result.add(new ArrayList<Integer>(temp));
+            result.add(new ArrayList<>(temp));
             return;
         }
 

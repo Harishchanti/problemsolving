@@ -42,6 +42,7 @@ class TNode {
     int val;
     TNode left;
     TNode right;
+
     TNode(int val) {
         this.val = val;
     }
@@ -66,11 +67,12 @@ class Codec {
     void serialize(TNode root, StringBuffer sb) {
         if (root == null) {
             sb.append(n).append(comma).toString();
-        } else {
-            sb.append(root.val).append(comma);
-            serialize(root.left, sb);
-            serialize(root.right, sb);
+            return;
         }
+        sb.append(root.val).append(comma);
+        serialize(root.left, sb);
+        serialize(root.right, sb);
+
     }
 
     public TNode deserialize(String data) {

@@ -60,7 +60,6 @@ public class CreateBinaryTreefromParentChildRelation {
         Node root = null;
         Map<Integer,Integer> parentChildMap = new HashMap<>();
         Map<Integer,Node> nodesMap = new HashMap<>();
-        Map<Integer,Boolean> isLeftMap = new HashMap<>();
 
         for(Relation relation: relationList) {
             nodesMap.put(relation.child, new Node(relation.child));

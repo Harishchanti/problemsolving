@@ -29,8 +29,8 @@ Output: 0
  */
 public class CoineChange {
     public static void main(String[] args) {
-        int[] coins = { 1, 5, 10 };
-        int amount = 12;
+        int[] coins = {1,2 };
+        int amount = 8;
         int result = coinChangeUtil(0, coins, amount);
         System.out.println(result == Integer.MAX_VALUE ? -1 : result);
     }
@@ -47,7 +47,7 @@ public class CoineChange {
         // take a coin only if its value
         // is greater than 0.
         if (coins[i] > 0) {
-            take = 1 + coinChangeUtil(i, coins, amount - coins[i]);
+            take =  coinChangeUtil(i, coins, amount - coins[i]);
             if (take != Integer.MAX_VALUE)
                 take++;
         }

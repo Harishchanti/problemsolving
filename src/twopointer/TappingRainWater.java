@@ -48,8 +48,8 @@ public class TappingRainWater {
     private static int findWaterOptimized(int length) {
         int count = 0;
 
-        int i = 0, j = arr.length - 1;
-        int maxLeft = 0, maxRight = 0;
+        int i = 1, n = arr.length , j = n -2;
+        int maxLeft = arr[0], maxRight = arr[n-1];
 
         while (i <= j) {
 

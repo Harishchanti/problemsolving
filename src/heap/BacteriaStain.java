@@ -65,7 +65,7 @@ public class BacteriaStain {
         int totalTime = Integer.MIN_VALUE;
         while (!priorityQueue.isEmpty()) {
 
-            int one = priorityQueue.poll();
+            priorityQueue.poll();
             if (priorityQueue.isEmpty())
                 break;
 

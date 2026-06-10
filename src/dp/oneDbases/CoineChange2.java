@@ -41,8 +41,8 @@ All the values of coins are unique.
 public class CoineChange2 {
     public static void main(String[] args) {
 
-        int[] coins = { 1, 2, 5 };
-        int amount = 5;
+        int[] coins = { 1,2 };
+        int amount = 8;
 
         /*Input: amount = 5, coins = [1,2,5]
         Output: 4
@@ -51,7 +51,7 @@ public class CoineChange2 {
         5=2+2+1
         5=2+1+1+1
         5=1+1+1+1+1*/
-        System.out.println(findNumberOfWays(coins, 0, 4));
+        System.out.println(findNumberOfWays(coins, 0, amount));
 
     }
 

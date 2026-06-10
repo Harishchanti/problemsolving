@@ -6,14 +6,14 @@ import java.util.HashMap;
 public class LongestSubarrayConsisitingofUniqueElements {
 
     public static void main(String[] args) {
-        int arr[] = {1, 2, 3, 4, 5, 1, 2, 3};
+        int[] arr = {1, 2, 3, 4, 5, 1, 2, 3};
         int n = arr.length;
         System.out.print(largest_subarray(arr, n));
     }
 
     // Function to find largest
 // subarray with no dublicates
-    static int largest_subarray(int a[], int n) {
+    static int largest_subarray(int[] a, int n) {
         // Stores index of array elements
         HashMap<Integer,
                 Integer> index = new HashMap<Integer,

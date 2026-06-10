@@ -34,8 +34,8 @@ public class CombinationSum {
 
     public static void main(String[] args) {
         // Input: candidates = [2,3,6,7], target = 7
-        int[] candidates = { 2, 3, 6, 7 };
-        int target = 7;
+        int[] candidates = { 2,3,5};
+        int target = 8;
         combinationSum(candidates, target);
         result.forEach(System.out::println);
     }
@@ -50,23 +50,21 @@ public class CombinationSum {
     static void findAllCombinationSum(int[] a, int idx, List<Integer> curr,
             int target) {
 
-        if (target < 0) {
+
+        if (idx >= a.length || target < 0) {
             return;
         }
+
         if (target == 0) {
             result.add(new ArrayList<>(curr));
             return;
         }
 
-        for (int i = idx; i < a.length; i++) {
+        curr.add(a[idx]);
+        findAllCombinationSum(a, idx, curr, target-a[idx]);
 
-            curr.add(a[i]);
-
-            findAllCombinationSum(a, i, curr, target - a[i]);
-
-            curr.remove(curr.size() - 1);
-
-        }
+        curr.remove(curr.size() - 1);
+        findAllCombinationSum(a, idx + 1,curr, target);
 
     }
 }

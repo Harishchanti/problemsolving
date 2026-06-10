@@ -114,8 +114,11 @@ class Tree {
 		VerticalSumUtil(root.left(), hD - 1, hM);
 
 		// Update vertical sum for hD of this node
-		int prevSum = (hM.get(hD) == null) ? 0 : hM.get(hD);
-		hM.put(hD, prevSum + root.key());
+		/*int prevSum = (hM.get(hD) == null) ? 0 : hM.get(hD);
+		hM.put(hD, prevSum + root.key());*/
+
+        int prev =hM.getOrDefault(hD,0);
+        hM.put(hD,prev+root.key());
 
 		// Store the values in hM for right subtree
 		VerticalSumUtil(root.right(), hD + 1, hM);

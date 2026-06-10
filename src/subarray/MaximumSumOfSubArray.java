@@ -4,7 +4,7 @@ package subarray;
 
 public class MaximumSumOfSubArray {
     public static void main(String[] args) {
-        int[] a = { -2, -3, 4, -1, -2, 1, 5, -3 };
+        int[] a = { -2, -3, -4, -1 };
         System.out.println("Maximum contiguous sum is " +
                 maxSubArraySum(a));
         // print the sub array
@@ -30,7 +30,7 @@ public class MaximumSumOfSubArray {
             }
         }
         System.out.println("Max sum is " + maxSum + " and size is " + size);
-        for (int i = m+1; i <= m + size; i++) {
+        for (int i = m; i < m + size; i++) {
             System.out.print(a[i] + " ");
         }
     }
