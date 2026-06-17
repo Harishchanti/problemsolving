@@ -40,7 +40,7 @@ public class IsBipartiteGraph {
 
         for (int i = 0; i < n; i++) {
             if (colors[i] == -1) {
-                if (!checkIfBipartite(adjMap, 1, i, colors)) {
+                if (checkIfBipartite(adjMap, 1, i, colors)) {
                     return false;
                 }
             }
@@ -58,33 +58,30 @@ public class IsBipartiteGraph {
         for (int v : adjMap.get(u)) {
 
             if (colors[v] == colors[u]) {
-                return false;
+                return true;
             }
 
             if (colors[v] == -1) {// never colord or never visted.
 
                 int newColor = 1 - color;//(color == 0) ? 1 : 0;
 
-                if (!checkIfBipartite(adjMap, newColor, v, colors)) {
-                    return false;
+                if (checkIfBipartite(adjMap, newColor, v, colors)) {
+                    return true;
                 }
             }
 
         }
-        return true;
+        return false;
     }
 
     static Map<Integer, List<Integer>> getAdjustcentMap(int[][] graph) {
         Map<Integer, List<Integer>> map = new HashMap<>();
         for (int i = 0; i < graph.length; i++) {
-            map.put(i, new ArrayList<Integer>());
-        }
-        for (int i = 0; i < graph.length; i++) {
+            map.put(i, new ArrayList<>());
             for (int j = 0; j < graph[i].length; j++) {
                 map.get(i).add(graph[i][j]);
             }
         }
-
         return map;
     }
 }

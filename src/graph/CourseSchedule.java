@@ -67,10 +67,7 @@ public class CourseSchedule {
 
         }
 
-        if (count == numCourses)
-            return true;
-
-        return false;
+        return count == numCourses;
     }
 
 }

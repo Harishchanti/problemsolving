@@ -38,7 +38,23 @@ public class SellOrBuyStockAnyNumberOfTimes {
 
     public static void main(String[] args) {
         int[] price = { 7, 1, 5, 3, 6, 4 };
-        System.out.println(maxProfitBuyNSellStocks(price));
+        System.out.println(
+                "All time max profit : " + maxProfitBuyNSellStocks(price));
+        System.out.println(
+                "One time Max profit " + maxProfitWithOnezTrade(price));
+    }
+
+    private static int maxProfitWithOnezTrade(int[] price) {
+        int min = price[0], max = 0;
+
+        for (int i = 1; i < price.length; i++) {
+
+            min = Math.min(min, price[i]);
+            if (max < price[i] - min) {
+                max = price[i] - min;
+            }
+        }
+        return max;
     }
 
     private static int maxProfitBuyNSellStocks(int[] price) {

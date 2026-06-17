@@ -34,7 +34,7 @@ public class TwoArrayProblem {
 	}
 
 	private static int max(int i, int j) {
-		return i > j ? i : j;
+		return Math.max(i, j);
 	}
 
 }

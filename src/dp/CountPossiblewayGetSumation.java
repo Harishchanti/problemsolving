@@ -18,6 +18,22 @@ public class CountPossiblewayGetSumation {
             s.forEach(r -> System.out.print(r + " "));
             System.out.println();
         }
+        int[] result = {0};
+        populateSubsetSumV2(a,k,0,0,result);
+
+        System.out.println(result[0]);
+    }
+    static void populateSubsetSumV2(int[] a, int K, int runSum, int idx,int[] result) {
+        if (idx >= a.length || runSum > K)
+            return;
+        if (runSum == K) {
+            result[0] +=1;
+            return;
+        }
+
+        populateSubsetSumV2(a, K, runSum + a[idx], idx,
+                result);
+        populateSubsetSumV2(a, K, runSum, idx + 1, result);
     }
 
     static void populateSubsetSum(int[] a, int K, int runSum, int idx,
