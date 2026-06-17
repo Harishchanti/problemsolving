@@ -28,9 +28,9 @@ Output: []
  */
 public class WordBreak2 {
     public static void main(String[] args) {
-        String input = "catsanddog";
+        String input = "pineapplepenapple";
         List<String> wordDict =
-                Arrays.asList("cat", "cats", "and", "sand", "dog");
+                Arrays.asList("apple","pen","applepen","pine","pineapple");
         List<String> result = new ArrayList<>();
         generate(input, wordDict, result, new StringBuilder(), 0);
 

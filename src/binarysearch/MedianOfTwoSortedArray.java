@@ -2,7 +2,7 @@ package binarysearch;
 
 public class MedianOfTwoSortedArray {
 
-	public double findMedianSortedArrays(int input1[], int input2[]) {
+	public double findMedianSortedArrays(int[] input1, int[] input2) {
 		// if input1 length is greater than switch them so that input1 is
 		// smaller than input2.
 		if (input1.length > input2.length) {

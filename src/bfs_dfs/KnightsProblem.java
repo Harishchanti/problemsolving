@@ -17,19 +17,17 @@ public class KnightsProblem {
     }
 
     static boolean isInside(int x, int y, int N) {
-        if (x >= 1 && x <= N && y >= 1 && y <= N)
-            return true;
-        return false;
+        return x >= 1 && x <= N && y >= 1 && y <= N;
     }
 
     // Method returns minimum step
     // to reach target position
     static int minStepToReachTarget(
-            int knightPos[], int targetPos[],
+            int[] knightPos, int[] targetPos,
             int N) {
         // x and y direction, where a knight can move
-        int dx[] = {-2, -1, 1, 2, -2, -1, 1, 2};
-        int dy[] = {-1, -2, -2, -1, 1, 2, 2, 1};
+        int[] dx = {-2, -1, 1, 2, -2, -1, 1, 2};
+        int[] dy = {-1, -2, -2, -1, 1, 2, 2, 1};
 
         // queue for storing states of knight in board
         Vector<cell> q = new Vector<>();
@@ -40,16 +38,6 @@ public class KnightsProblem {
         cell t;
         int x, y;
         boolean visit[][] = new boolean[N + 1][N + 1];
-        boolean visit1[][] = new boolean[N + 1][N + 1];
-
-        // make all cell unvisited
-        for (int i = 1; i <= N; i++)
-            for (int j = 1; j <= N; j++)
-                visit[i][j] = false;
-
-         for(int i= 0 ; i<=N;i++) {
-             Arrays.fill(visit1[i],false);
-         }
 
         // visit starting state
         visit[knightPos[0]][knightPos[1]] = true;
@@ -82,8 +70,8 @@ public class KnightsProblem {
 
     public static void main(String[] args) {
         int N = 30;
-        int knightPos[] = {1, 1};
-        int targetPos[] = {30, 30};
+        int[] knightPos = {1, 1};
+        int[] targetPos = {30, 30};
         System.out.println(
                 minStepToReachTarget(
                         knightPos, targetPos, N));

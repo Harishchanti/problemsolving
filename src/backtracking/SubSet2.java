@@ -2,6 +2,8 @@ package backtracking;
 
 import java.util.*;
 
+
+
 /*
 You are given an array nums of integers, which may contain duplicates. Return all possible subsets.
 
@@ -23,7 +25,7 @@ public class SubSet2 {
     static Set<List<Integer>> result = new HashSet<>();
 
     public static void main(String[] args) {
-        int[] nums = { 1,2,3 };
+        int[] nums = { 1, 2, 1 };
         subsetsWithDup(nums);
         result.forEach(r -> {
             r.forEach(g -> System.out.print(g + " "));
@@ -43,15 +45,28 @@ public class SubSet2 {
     }
 
     static void findSubset(int[] nums, int pos, List<Integer> current) {
-        if (pos >= nums.length) {
-            result.add(new ArrayList<>(current));
+
+        /*if (result.contains(current)) {
             return;
-        }
+        }*/
+
+        result.add(new ArrayList<>(current));
+
+        if(pos >= nums.length) return;
+
+       /* for (int i = pos; i < nums.length; i++) {
+            current.add(nums[i]);
+
+            findSubset(nums, i + 1, current);
+
+            current.remove(current.size() - 1);
+        }*/
 
         current.add(nums[pos]);
         findSubset(nums, pos + 1, current);
 
-        current.remove(current.size() - 1);
+
+        current.remove(current.size() -1);
         findSubset(nums, pos + 1, current);
 
     }

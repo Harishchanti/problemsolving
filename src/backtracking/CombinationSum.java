@@ -40,8 +40,7 @@ public class CombinationSum {
         result.forEach(System.out::println);
     }
 
-    public static void combinationSum(int[] candidates,
-            int target) {
+    public static void combinationSum(int[] candidates, int target) {
 
         findAllCombinationSum(candidates, 0, new ArrayList<Integer>(), target);
 

@@ -37,20 +37,19 @@ class Result {
         }
     }
 
-    public static int queensAttack(int n, int k, int r_q, int c_q,
+    public static int queensAttack(int n, int r_q, int c_q,
             List<List<Integer>> obstacles) {
         // Write your code here
         int[] result = { 0 };
-        int[][] board = new int[n  ][n  ];
+        int[][] board = new int[n][n];
 
         for (List<Integer> obs : obstacles) {
             int bloker_r = obs.get(0);
             int bloker_c = obs.get(1);
-            board[bloker_r -1 ][bloker_c -1 ] = 1;
+            board[bloker_r - 1][bloker_c - 1] = 1;
         }
 
-
-        findMaxinumAttacks(board, n, r_q-1, c_q-1, result);
+        findMaxinumAttacks(board, n, r_q - 1, c_q - 1, result);
         return result[0];
 
     }
@@ -60,7 +59,7 @@ class Result {
 
         Queue<CellDetails> queue = new LinkedList<CellDetails>();
 
-        queue.add(new CellDetails(r_q-1, c_q-1, "center"));
+        queue.add(new CellDetails(r_q - 1, c_q - 1, "center"));
 
         queue.add(new CellDetails(r_q + 1, c_q, "N"));
         queue.add(new CellDetails(r_q + 1, c_q + 1, "NE"));
@@ -81,7 +80,6 @@ class Result {
 
             if (x < 0 || y < 0 || x >= n || y >= n || board[x][y] == 1)
                 continue;
-
 
             switch (d) {
             case "N":
@@ -111,7 +109,7 @@ class Result {
             default:
                 break;
             }
-            if(!d.equalsIgnoreCase("center")) {
+            if (!d.equalsIgnoreCase("center")) {
                 result[0] += 1;
             }
 
@@ -146,18 +144,16 @@ public class QueuenProblem {
 
         IntStream.range(0, k).forEach(i -> {
             try {
-                obstacles.add(
-                        Stream.of(bufferedReader.readLine()
-                                        .replaceAll("\\s+$", "").split(" "))
-                                .map(Integer::parseInt)
-                                .collect(toList())
-                );
+                obstacles.add(Stream.of(
+                                bufferedReader.readLine().replaceAll("\\s+$", "")
+                                        .split(" ")).map(Integer::parseInt)
+                        .collect(toList()));
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
         });
 
-        int result = Result.queensAttack(n, k, r_q, c_q, obstacles);
+        int result = Result.queensAttack(n, r_q, c_q, obstacles);
         System.out.println(result);
        /* bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();
