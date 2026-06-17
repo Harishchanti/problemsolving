@@ -34,7 +34,7 @@ public class MedianOfStreamOfNumbers {
             // case1(left side heap has more elements)
             if (smaller.size() > greater.size()) {
                 if (x < med) {
-                    greater.add(smaller.remove());
+                    greater.add(smaller.poll());
                     smaller.add(x);
                 } else
                     greater.add(x);
@@ -55,7 +55,7 @@ public class MedianOfStreamOfNumbers {
             // case3(right side heap has more elements)
             else {
                 if (x > med) {
-                    smaller.add(greater.remove());
+                    smaller.add(greater.poll());
                     greater.add(x);
                 } else
                     smaller.add(x);
