@@ -35,11 +35,6 @@ public class MergeIntervals {
             System.out.println("(" + r[0] + "," + r[1] + ")");
         }*/
 
-        int x = Integer.MAX_VALUE+1;
-        int y = Integer.MAX_VALUE;
-        int m = Integer.MIN_VALUE;
-
-        System.out.println(y+" : "+x +" "+m);
         int[][] result1 = mergeIntervalsV2(a);// O (n * 10000)
         for (int[] r : result1) {
             System.out.println("(" + r[0] + "," + r[1] + ")");

@@ -80,7 +80,7 @@ public class ChemicalFormula {
 
     public static void main(String[] args) {
         String[] testCases = {
-                "CH2",
+                "((((CH))))",
                 "(CH2)2O2",
                 "((CH)2)O"
         };

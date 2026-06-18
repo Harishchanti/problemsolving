@@ -11,7 +11,7 @@ public class SlidingWindow {
 	// maintain decreasing order of values from front to rear in Qi, i.e.,
 	// arr[Qi.front[]] to arr[Qi.rear()] are sorted in decreasing order
 
-	static void printMax(int arr[], int n, int k) {
+	static void printMax(int[] arr, int n, int k) {
 		Deque<Integer> Qi = new LinkedList<Integer>();
 
 		/* Process first k (or first window) elements of array */

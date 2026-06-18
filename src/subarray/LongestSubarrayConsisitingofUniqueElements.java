@@ -23,8 +23,7 @@ public class LongestSubarrayConsisitingofUniqueElements {
 
             // Update j based on previous
             // occurrence of a[i]
-            j = Math.max(index.containsKey(a[i]) ?
-                    index.get(a[i]) : 0, j);
+            j = Math.max(index.getOrDefault(a[i], 0), j);
 
             // Update ans to store maximum
             // length of subarray

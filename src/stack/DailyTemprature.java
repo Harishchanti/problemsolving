@@ -20,7 +20,7 @@ Output: [0,0,0]
  */
 public class DailyTemprature {
     public static void main(String[] args) {
-        int[] a = { 30, 38, 30, 36, 35, 40, 28 };
+        int[] a = { 39, 38, 37, 36, 35, 40, 37 };
         int[] result = dailyTemperatures(a);
         for (int t : result)
             System.out.print(t+" ");

@@ -69,7 +69,7 @@ public class LongestSubArrayDiffrenceIsLessThenK {
 
             // Remove indices of all elements smaller
             // than or equal to current from maxHeap
-            while (maxHeap.size() > 0 &&
+            while (!maxHeap.isEmpty() &&
                     arr[maxHeap.peekLast()] <= currEl)
                 maxHeap.removeLast();
 
@@ -78,7 +78,7 @@ public class LongestSubArrayDiffrenceIsLessThenK {
 
             // Remove indices of all elements larger
             // than or equal to current from minHeap
-            while (minHeap.size() > 0 &&
+            while (!minHeap.isEmpty() &&
                     arr[minHeap.peekLast()] >= currEl)
                 minHeap.removeLast();
 
@@ -111,11 +111,11 @@ public class LongestSubArrayDiffrenceIsLessThenK {
 
                 // Remove elements from heaps that
                 // are not in the subarray anymore
-                while (minHeap.size() > 0 &&
+                while (!minHeap.isEmpty() &&
                         minHeap.peekFirst() < beg)
                     minHeap.removeFirst();
 
-                while (maxHeap.size() > 0 &&
+                while (!maxHeap.isEmpty() &&
                         maxHeap.peekFirst() < beg)
                     maxHeap.removeFirst();
             }
