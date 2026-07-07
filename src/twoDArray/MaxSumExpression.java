@@ -4,10 +4,10 @@ import java.util.Stack;
 
 public class MaxSumExpression {
     public static void main(String[] args) {
-        char[][] cArr = { { '+', '2', '+', '3', '1' },
-                { '+', '2', '*', '3', '1' },
-                { '4', '*', '3', '*', '9' },
-                { '+', '2', '9', '*', '8' } };
+        char[][] cArr = {   { '+', '2', '+', '3', '1' },
+                            { '+', '2', '*', '3', '1' },
+                            { '4', '*', '3', '*', '9' },
+                            { '+', '2', '9', '*', '8' } };
         // Max sum vertical/ horizontal
         // 3 * 9 = 27
         // 4 * 3 + 1 = 13

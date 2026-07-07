@@ -29,8 +29,7 @@ public class MaximumProductSubArray {
             // calculate product from index right to left
             int j = n - i - 1;
             rightToLeft *= arr[j];
-            maxProd = Math.max(leftToRight,
-                    Math.max(rightToLeft, maxProd));
+            maxProd = Math.max(maxProd, Math.max(rightToLeft, leftToRight));
         }
         return maxProd;
     }

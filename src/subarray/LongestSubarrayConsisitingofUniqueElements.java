@@ -16,8 +16,7 @@ public class LongestSubarrayConsisitingofUniqueElements {
     static int largest_subarray(int[] a, int n) {
         // Stores index of array elements
         HashMap<Integer,
-                Integer> index = new HashMap<Integer,
-                Integer>();
+                Integer> index = new HashMap<>();
         int ans = 0;
         for (int i = 0, j = 0; i < n; i++) {
 

@@ -17,7 +17,7 @@ public class ReduceSimilarCharFromString {
 	}
 
 	private static String stackBasedApproch(String s) {
-		Stack<Character> stak = new Stack<Character>();
+		Stack<Character> stak = new Stack<>();
 		int i = 1;
 		String result = "";
 		stak.push(s.charAt(0));

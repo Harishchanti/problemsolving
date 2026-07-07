@@ -9,7 +9,7 @@ public class LongestSubArrayDiffrenceIsLessThenK {
 // elements less than or equal to integer K
 
 
-    public static int computeLongestSubarray(int arr[],
+    public static int computeLongestSubarray(int[] arr,
                                              int k) {
         // maxLength is 1 because k >= 0,
         // a single element, subarray will always
@@ -48,7 +48,7 @@ public class LongestSubArrayDiffrenceIsLessThenK {
         return maxLength;
     }
 
-    public static int computeLongestSubarrayV2(int arr[],
+    public static int computeLongestSubarrayV2(int[] arr,
             int k)
     {
         // Stores the maximum length subarray so far
@@ -129,7 +129,7 @@ public class LongestSubArrayDiffrenceIsLessThenK {
 
     // Driver Code
     public static void main(String[] args) {
-        int arr[] = {1, 2, 3, 6, 7};
+        int[] arr = {1, 2, 3, 6, 7};
 
         int k = 2;
 

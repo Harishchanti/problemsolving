@@ -1,6 +1,7 @@
 package tree;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class SerializeAndDeSerializeTree {
     public static void main(String[] args) {
@@ -24,6 +25,12 @@ public class SerializeAndDeSerializeTree {
 
         System.out.print("Deserialize Tree : ");
         printPerOrder(root);
+        int[] aa = {1,2,4};
+        //List<Integer> l =Arrays.asList(aa);
+        Set<Integer> s = Arrays.stream(aa).boxed().collect(Collectors.toSet());
+
+        Integer[] aaa = {1,2,4};
+        Set<Integer> sa = Arrays.stream(aaa).collect(Collectors.toSet());
 
     }
 
@@ -77,7 +84,7 @@ class Codec {
 
     public TNode deserialize(String data) {
         Queue<String> queue =
-                new LinkedList<String>(Arrays.asList(data.split(comma)));
+                new LinkedList<>(Arrays.asList(data.split(comma)));
         //System.out.println(queue);
         return deserialize(queue);
     }

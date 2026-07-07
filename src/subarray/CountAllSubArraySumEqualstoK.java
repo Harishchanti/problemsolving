@@ -13,7 +13,7 @@ public class CountAllSubArraySumEqualstoK {
     // L = n * (n + 1) / 2
 
     public static void main(String[] args) {
-        int a[] = {3, 4, 7, 2, -3, 1, 4, 2, 1};
+        int[] a = {3, 4, 7, 2, -3, 1, 4, 2, 1};
         //int a[] = {1, 2, 3, 4, 5};
 
         // you need to find all the sub array sum value equals to given number

@@ -7,22 +7,22 @@ public class StringPermutations {
         String input = "bb4b";//"3Ba";
         TreeSet<String> res = new TreeSet<>();
         //permute(input, 0, input.length() - 1, res);
-        permuteV2(input.toCharArray(),0,res);
+        permuteV2(input.toCharArray(), 0, res);
         for (String s : res) {
             System.out.print(s + " ");
         }
     }
 
     private static void permuteV2(char[] input, int idx, TreeSet<String> res) {
-        if(idx >= input.length){
+        if (idx >= input.length) {
             res.add(String.valueOf(input));
             return;
         }
 
-        for(int i = idx; i < input.length ; i++ ) {
-            swapV2(input,idx,i);
-            permuteV2(input,idx+1,res);
-            swapV2(input,idx,i);
+        for (int i = idx; i < input.length; i++) {
+            swapV2(input, idx, i);
+            permuteV2(input, idx + 1, res);
+            swapV2(input, idx, i);
         }
     }
 

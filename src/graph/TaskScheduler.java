@@ -207,7 +207,7 @@ out: T4, T6, T1
         return adjMap;*/
 
         for (String t : taskList) {
-            List<String> list = new ArrayList<String>();
+            List<String> list = new ArrayList<>();
 
             if (taksDepMap.containsKey(t)) {
                 for (Work s : taksDepMap.get(t)) {

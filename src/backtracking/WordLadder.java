@@ -187,9 +187,8 @@ public class WordLadder {
     static int wordLadderUsingBFS(String start, String target, String[] arr) {
 
         // Set to keep track of unvisited queue
-        Set<String> st = new HashSet<String>();
-        for (int i = 0; i < arr.length; i++)
-            st.add(arr[i]);
+        Set<String> st = new HashSet<>(Arrays.asList(arr));
+
 
         // Store the current chain length
         int res = 0;

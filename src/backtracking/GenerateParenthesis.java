@@ -1,6 +1,7 @@
 package backtracking;
 
 import java.util.*;
+
 // O(2^n * n) Time and O(n) Space
 public class GenerateParenthesis {
     static List<String> result = new ArrayList<String>();
@@ -17,7 +18,8 @@ public class GenerateParenthesis {
     static void generateParenthesisUtil(int n, int open, int close,
             String str) {
 
-        if(close>open) return;
+        if (close > open)
+            return;
 
         if (str.length() == 2 * n) {
             result.add(str);

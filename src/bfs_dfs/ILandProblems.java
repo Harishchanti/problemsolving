@@ -4,7 +4,7 @@ public class ILandProblems {
 
     public static void main(String[] args) {
 
-        int M[][] = new int[][]{
+        int[][] M = new int[][]{
                 {1, 1, 0, 1, 0},
                 {0, 1, 0, 0, 1},
                 {1, 0, 0, 1, 1},
@@ -12,11 +12,11 @@ public class ILandProblems {
                 {1, 0, 1, 0, 1}
 
         };
-        int N[][] = new int[][]{
+        int[][] N = new int[][]{
                 {1, 1, 0, 1, 0},
                 {0, 1, 0, 0, 1},
                 {0, 1, 0, 1, 1},
-                {0, 0, 0, 0, 0},
+                {0, 1, 0, 0, 0},
                 {1, 0, 1, 0, 1}
 
         };
