@@ -19,7 +19,7 @@ public class TimeSeriesBasedKeyValue {
         map = new HashMap<>();
     }
 
-    public  void set(String key, String value, int timestamp) {
+    public void set(String key, String value, int timestamp) {
 
         if (!map.containsKey(key)) {
             map.put(key, new ArrayList<Value>());
@@ -27,7 +27,7 @@ public class TimeSeriesBasedKeyValue {
         map.get(key).add(new Value(value, timestamp));
     }
 
-    public  String get(String key, int timestamp) {
+    public String get(String key, int timestamp) {
         String result = "";
         ArrayList<Value> list = map.get(key);
         if (list == null) {
@@ -37,7 +37,7 @@ public class TimeSeriesBasedKeyValue {
         int l = 0, r = list.size() - 1, matchIdx = -1;
 
         while (l <= r) {
-            int mid = (l + r) / 2;
+            int mid = l + (r - l) / 2;
 
             if (list.get(mid).timeStamp <= timestamp) {
                 matchIdx = mid;
@@ -55,10 +55,13 @@ public class TimeSeriesBasedKeyValue {
 
     public static void main(String[] args) {
         TimeSeriesBasedKeyValue timeMap = new TimeSeriesBasedKeyValue();
-        timeMap.set("alice", "happy", 1);  // store the key "alice" and value "happy" along with timestamp = 1.
+        timeMap.set("alice", "happy",
+                1);  // store the key "alice" and value "happy" along with timestamp = 1.
         System.out.println(timeMap.get("alice", 1));           // return "happy"
-        System.out.println(timeMap.get("alice", 2));           // return "happy", there is no value stored for timestamp 2, thus we return the value at timestamp 1.
-        timeMap.set("alice", "sad", 5);    // store the key "alice" and value "sad" along with timestamp = 3.
+        System.out.println(timeMap.get("alice",
+                2));           // return "happy", there is no value stored for timestamp 2, thus we return the value at timestamp 1.
+        timeMap.set("alice", "sad",
+                5);    // store the key "alice" and value "sad" along with timestamp = 3.
         System.out.println(timeMap.get("alice", 3));
         System.out.println(timeMap.get("alice", 400));
     }
