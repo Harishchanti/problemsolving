@@ -1,6 +1,10 @@
 package backtracking;
 
 import java.util.*;
+/*
+Time complexity : 𝑶(𝑴𝟐×𝑵+𝑲×𝑴)
+
+ */
 
 public class WordLadder2 {
     public static void main(String[] args) {

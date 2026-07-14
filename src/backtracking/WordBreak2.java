@@ -26,6 +26,7 @@ Example 3:
 Input: s = "catsandog", wordDict = ["cats","dog","sand","and","cat"]
 Output: []
 
+ TimeComplexity : (2 ^n  * n^2 ) or (2 ^n  * n)
  */
 public class WordBreak2 {
     public static void main(String[] args) {

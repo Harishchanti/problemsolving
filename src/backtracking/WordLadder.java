@@ -4,6 +4,11 @@ import java.util.*;
 
 /*
 https://www.geeksforgeeks.org/dsa/word-ladder-length-of-shortest-chain-to-reach-a-target-word/
+
+Time Complexity : (O(M^2  N)).
+
+where M is the length of each word and N is the total number of words in the word list.
+
  */
 public class WordLadder {
 

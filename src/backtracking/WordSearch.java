@@ -10,6 +10,9 @@ The word can be constructed from letters of sequentially adjacent cells, where a
 /*
 Time Complexity: O(n*m * 4k), where n × m is the matrix size and k is the word length
 Auxiliary Space: O(k), due to recursion stack depth
+
+Time Complexity: O(M times N times 4^L)
+Space Complexity : O (L)
  */
 public class WordSearch {
 
