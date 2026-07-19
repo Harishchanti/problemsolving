@@ -31,7 +31,7 @@ exection -> execution (insert 'u')
  */
 public class EditDistance {
     public static void main(String[] args) {
-        String s1 = "intention", s2 = "execution";
+        String s1 = "horse", s2 = "ros";
         System.out.println(findMinDistance(s1, s2));
     }
 
@@ -39,22 +39,22 @@ public class EditDistance {
 
         return findMinDistanceR(s1, s2, 0, 0);
     }
-
+    int[][] dp = new int[501][501];
     private static int findMinDistanceR(String s1, String s2, int i, int j) {
 
         if (i == s1.length()) {
-            return s2.length() - i; // insert
+            return s2.length() - j; // insert
         } else if (j == s2.length()) {
-            return s1.length() - j; // delete
+            return s1.length() - i; // delete
         }
         if (s1.charAt(i) == s2.charAt(j)) {
             return findMinDistanceR(s1, s2, i + 1, j + 1);
+        } else {
+            int insert = 1 + findMinDistanceR(s1, s2, i, j + 1);
+            int delete = 1 + findMinDistanceR(s1, s2, i + 1, j);
+            int replace = 1 + findMinDistanceR(s1, s2, i + 1, j + 1);
+            return Math.min(insert, Math.min(delete, replace));
         }
 
-        int insert = 1 + findMinDistanceR(s1, s2, i , j+1);
-        int delete = 1 + findMinDistanceR(s1, s2, i+1, j );
-        int replace = 1 + findMinDistanceR(s1, s2, i + 1, j + 1);
-
-        return Math.min(insert, Math.min(delete, replace));
     }
 }
