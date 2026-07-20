@@ -37,6 +37,8 @@ Constraints:
 1 <= coins[i] <= 5000
 All the values of coins are unique.
 0 <= amount <= 5000
+
+Time complexity : Brute Force / Recursion (O(N^A)) or (O(2^{N times A}))
  */
 public class CoineChange2 {
     public static void main(String[] args) {
