@@ -6,10 +6,10 @@ import java.util.Stack;
 
 public class TopologicalSort {
 
-    private int V;
+    private final int V;
 
     // Adjacency List as ArrayList of ArrayList's
-    private ArrayList<ArrayList<Integer>> adj;
+    private final ArrayList<ArrayList<Integer>> adj;
 
     // Constructor
     TopologicalSort(int v) {
@@ -25,7 +25,7 @@ public class TopologicalSort {
     }
 
     // A recursive function used by topologicalSort
-    void topologicalSortUtil(int v, boolean visited[],
+    void topologicalSortUtil(int v, boolean[] visited,
                              Stack<Integer> stack) {
         // Mark the current node as visited.
         visited[v] = true;
@@ -33,16 +33,15 @@ public class TopologicalSort {
 
         // Recur for all the vertices adjacent
         // to thisvertex
-        Iterator<Integer> it = adj.get(v).iterator();
-        while (it.hasNext()) {
-            i = it.next();
+        for (Integer integer : adj.get(v)) {
+            i = integer;
             if (!visited[i])
                 topologicalSortUtil(i, visited, stack);
         }
 
         // Push current vertex to stack
         // which stores result
-        stack.push(new Integer(v));
+        stack.push(v);
     }
 
     // The function to do Topological Sort.
@@ -51,7 +50,7 @@ public class TopologicalSort {
         Stack<Integer> stack = new Stack<Integer>();
 
         // Mark all the vertices as not visited
-        boolean visited[] = new boolean[V];
+        boolean[] visited = new boolean[V];
         for (int i = 0; i < V; i++)
             visited[i] = false;
 
@@ -60,11 +59,11 @@ public class TopologicalSort {
         // Topological Sort starting
         // from all vertices one by one
         for (int i = 0; i < V; i++)
-            if (visited[i] == false)
+            if (!visited[i])
                 topologicalSortUtil(i, visited, stack);
 
         // Print contents of stack
-        while (stack.empty() == false)
+        while (!stack.empty())
             System.out.print(stack.pop() + " ");
     }
 

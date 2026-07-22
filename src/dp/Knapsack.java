@@ -7,10 +7,10 @@ public class Knapsack {
 	}
 
 	// Returns  the maximum value that can be put in a knapsack of capacity W
-	static int knapSack(int W, int wt[], int val[], int n) {
+	static int knapSack(int W, int[] wt, int[] val, int n) {
 		// Build table K[][] in bottom up manner
 		int i, w;
-		int K[][] = new int[n + 1][W + 1];
+		int[][] K = new int[n + 1][W + 1];
 
 		// Build table K[][] in bottom up manner
 		for (i = 0; i <= n; i++) {

@@ -61,7 +61,7 @@ public class IsBipartiteGraph {
                 return true;
             }
 
-            if (colors[v] == -1) {// never colord or never visted.
+            if (colors[v] == -1) {// never colored or never visited.
 
                 int newColor = 1 - color;//(color == 0) ? 1 : 0;
 
