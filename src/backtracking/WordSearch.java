@@ -19,14 +19,16 @@ public class WordSearch {
     static int[][] dx = { { 1, 0 }, { 0, 1 }, { -1, 0 }, { 0, -1 } };
 
     public static void main(String[] args) {
-        /*
-        char[][] board = {{'a'}};
-        String word = "a";
-         */
+
         char[][] board = { { 'A', 'B', 'C', 'E' },
-                { 'S', 'F', 'C', 'S' },
-                { 'A', 'D', 'E', 'E' } };
+                            { 'S', 'F', 'C', 'S' },
+                        { 'A', 'D', 'E', 'E' } };
         String word = "ABCCED";
+        System.out.println(isExist(board, word));
+
+        board = new char[][] { { 'a' } };
+
+        word = "a";
         System.out.println(isExist(board, word));
 
     }
@@ -51,12 +53,12 @@ public class WordSearch {
     private static boolean wordPossible(char[][] b, int i, int j, int m, int n,
             String word, int idx) {
 
-        if (i < 0 || j < 0 || i >= m || j >= n || b[i][j] == '$') {
-            return false;
-        }
-
         if (idx == word.length()) {
             return true;
+        }
+
+        if (i < 0 || j < 0 || i >= m || j >= n || b[i][j] == '$') {
+            return false;
         }
 
         if (b[i][j] != word.charAt(idx)) {
