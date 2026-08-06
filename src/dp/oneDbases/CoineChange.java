@@ -29,6 +29,10 @@ Output: 0
 
 Time complexity : Brute Force / Recursion (O(N^A)) or (O(2^{N times A}))
 
+Brute Force (Pure Recursion):Time Complexity: (O(K^{amount}) ) or exponential, as every sub-amount branches into K recursive choices.
+
+Space Complexity: O(amount) for the maximum recursion stack depth.
+
  */
 public class CoineChange {
     public static void main(String[] args) {

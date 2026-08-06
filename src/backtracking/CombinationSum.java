@@ -28,6 +28,8 @@ Example 3:
 
 Input: candidates = [2], target = 1
 Output: []
+
+Time Complexity : O(2^N))
  */
 public class CombinationSum {
     static List<List<Integer>> result = new ArrayList<>();

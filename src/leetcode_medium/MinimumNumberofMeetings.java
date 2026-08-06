@@ -17,7 +17,7 @@ public class MinimumNumberofMeetings {
 
     public static int minMeetingRooms(int[][] intervals) {
         Arrays.sort(intervals, (a, b) -> (a[0] == b[0] ? (a[1] - b[1]) : (a[0] - b[0])));
-        PriorityQueue<Integer> queue = new PriorityQueue<Integer>();
+        PriorityQueue<Integer> queue = new PriorityQueue<>();
         for (int[] i : intervals) {
             if (!queue.isEmpty() && queue.peek() <= i[0])
                 queue.poll();

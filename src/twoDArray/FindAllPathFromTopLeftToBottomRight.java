@@ -41,7 +41,7 @@ DRRDDRRDD
             return;
         }
 
-       // int temp = a[i][j];
+        int temp = a[i][j];
         a[i][j] = 0;
 
         generateAllPaths(a, i + 1, j, pathList, 'D', N);
@@ -50,20 +50,20 @@ DRRDDRRDD
         generateAllPaths(a, i, j + 1, pathList, 'R', N);
         generateAllPaths(a, i, j - 1, pathList, 'L', N);
 
-        a[i][j] = 1;
+        a[i][j] = temp;
         pathList.remove(pathList.size() - 1);
 
     }
 
     private static String getPathFromList(List<Character> pathList) {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         int i = 0;
         for (Character c : pathList) {
 
             if (i++ == 0)
                 continue;
-            result += c;
+            result.append(c);
         }
-        return result;
+        return result.toString();
     }
 }

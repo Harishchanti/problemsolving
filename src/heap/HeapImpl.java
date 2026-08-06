@@ -6,7 +6,7 @@ public class HeapImpl {
 
 	public static void main(String[] args) {
 		//int[] arr = new int[] { 3, 4, 14, 1, -5, -1 };
-        int arr[] = {1, 3, 5, 4, 6, 13, 10, 9, 8, 15, 17};
+        int[] arr = {1, 3, 5, 4, 6, 13, 10, 9, 8, 15, 17};
 
 		heapify(arr);
 
@@ -21,15 +21,15 @@ public class HeapImpl {
 			minheap(arr, 0);
 
 		}
-		for (int j = 0; j < arr.length; j++) {
+        for (int i : arr) {
 
-			System.out.print(arr[j] + " ");
-		}
+            System.out.print(i + " ");
+        }
 	}
 
 	/* Function to build a heap */
 
-	public static void heapify(int arr[])
+	public static void heapify(int[] arr)
 
 	{
 
@@ -43,7 +43,7 @@ public class HeapImpl {
 
 	/* Function to swap largest element in heap */
 
-	public static void minheap(int arr[], int i)
+	public static void minheap(int[] arr, int i)
 
 	{
 
@@ -75,7 +75,7 @@ public class HeapImpl {
 
 	/* Function to swap two numbers in an array */
 
-	public static void swap(int arr[], int i, int j)
+	public static void swap(int[] arr, int i, int j)
 
 	{
 

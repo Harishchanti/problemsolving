@@ -4,11 +4,15 @@ public class KoKoEatingBanana {
 
     public static void main(String[] args) {
         /*
-        piles=[25,10,23,4]
-h=4
+        piles=[25,10,23,4] h=4
+        Output: 25
+
+piles = [30,11,23,4,20], h = 6
+Output: 23
+
          */
-        int[] a = { 25, 10, 23, 4 };
-        int h = 4;
+        int[] a = { 30,11,23,4,20 };
+        int h = 6;
         System.out.println(minEatingSpeed(a, h));
     }
 
@@ -45,4 +49,7 @@ h=4
         }
         return maxhr <= h;
     }
+    // 25, 10, 23, 4
+    // 1,2,3,4,5,...25
+    //
 }

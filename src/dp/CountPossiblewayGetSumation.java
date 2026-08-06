@@ -47,7 +47,7 @@ public class CountPossiblewayGetSumation {
 
         al.add(a[idx]);
         populateSubsetSum(a, K, runSum + a[idx], idx, ans,
-                al);//when repitions of elements are allowed
+                al);//when repetitions of elements are allowed
 
         al.remove(al.size() - 1);
         populateSubsetSum(a, K, runSum, idx + 1, ans, al);
