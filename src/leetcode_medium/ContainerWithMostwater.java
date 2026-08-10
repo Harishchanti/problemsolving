@@ -3,7 +3,7 @@ package leetcode_medium;
 // https://www.geeksforgeeks.org/container-with-most-water/amp/
 public class ContainerWithMostwater {
 
-    public static int maxArea(int A[], int len) {
+    public static int maxArea(int[] A, int len) {
 
         int l = 0;
         int r = len - 1;
@@ -25,8 +25,8 @@ public class ContainerWithMostwater {
 
     public static void main(String[] args) {
 
-        int a[] = {1, 5, 4, 3};
-        int b[] = {3, 1, 2, 4, 5};
+        int[] a = {1, 5, 4, 3};
+        int[] b = {3, 1, 2, 4, 5};
 
         int len1 = 4;
         System.out.print(maxArea(a, len1) + "\n");
