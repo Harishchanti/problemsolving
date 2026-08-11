@@ -87,7 +87,7 @@ public class SudokuProblems {
 
         for (char digit = '1'; digit <= '9'; digit++) {
 
-            if (isSalfe(board, i, j, digit)) {
+            if (isSafe(board, i, j, digit)) {
 
                 board[i][j] = digit ;
 
@@ -102,7 +102,7 @@ public class SudokuProblems {
         return false;
     }
 
-    private static boolean isSalfe(char[][] board, int i, int j, char digit) {
+    private static boolean isSafe(char[][] board, int i, int j, char digit) {
 
         // check row wise
         for (int r = i, c = 0; c < 9; c++) {
@@ -139,10 +139,9 @@ public class SudokuProblems {
                     continue;
                 }
 
-                String row = new String(i + "_ROW_" + board[i][j]);
-                String col = new String(j + "_COL_" + board[i][j]);
-                String rc = new String(
-                        i / 3 + "_ROW_" + j / 3 + "_COL_" + board[i][j]);
+                String row = i + "_ROW_" + board[i][j];
+                String col = j + "_COL_" + board[i][j];
+                String rc = i / 3 + "_ROW_" + j / 3 + "_COL_" + board[i][j];
 
                 if (set.contains(row) || set.contains(col) | set.contains(rc)) {
                     return false;
