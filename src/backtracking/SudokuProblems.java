@@ -60,10 +60,13 @@ public class SudokuProblems {
             for (int m = 0; m < 9; m++) {
                 for (int n = 0; n < 9; n++) {
 
-                    System.out.print(board[m][n]+", ");
+                    System.out.print(board[m][n] + ", ");
                 }
                 System.out.println();
             }
+        } else {
+            System.out.println(
+                    "Sudoku can not be solved for a given board" + board);
         }
 
     }
@@ -89,7 +92,7 @@ public class SudokuProblems {
 
             if (isSafe(board, i, j, digit)) {
 
-                board[i][j] = digit ;
+                board[i][j] = digit;
 
                 if (solveSudoku(board, nextRow, nextCol)) {
                     return true;
@@ -129,7 +132,6 @@ public class SudokuProblems {
     }
 
     static boolean isValidSudoku(char[][] board) {
-
 
         Set<String> set = new HashSet<>();
         for (int i = 0; i < 9; ++i) {

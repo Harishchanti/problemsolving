@@ -26,6 +26,9 @@ Example 3:
 Input: s = "catsandog", wordDict = ["cats","dog","sand","and","cat"]
 Output: false
 
+Time complexity : O(2^n) ( without Memoization)
+ O(n^2 * m)) (With Memoization)
+
  */
 public class WordBreak {
 
