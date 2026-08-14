@@ -30,6 +30,7 @@ public class RottingOranges {
             }
         }
 //  grid=[[2,1,1],[0,1,1],[1,0,1]]
+        int[][] dx = { { 0, 1 }, { -1, 0 }, { 1, 0 }, { 0, -1 } };
         while (!queue.isEmpty()) {
             int qSize = queue.size();
             boolean flag = false;
@@ -40,7 +41,7 @@ public class RottingOranges {
                 int r = indexDetails.getR();
                 int min = indexDetails.getMinutes();
 
-                int[][] dx = { { 0, 1 }, { -1, 0 }, { 1, 0 }, { 0, -1 } };
+
 
                 for (int[] d : dx) {
                     int nx = r + d[0];

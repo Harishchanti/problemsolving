@@ -15,7 +15,12 @@ Each word must be constructed from letters of sequentially adjacent cells, where
 Input: board = [["o","a","a","n"],["e","t","a","e"],["i","h","k","r"],["i","f","l","v"]], words = ["oath","pea","eat","rain"]
 Output: ["eat","oath"]
 
+Time Complexity :  (O(M times N times 4 times 3^{L-1} + {Total Characters}))
 
+Space Complexity :
+
+Trie Storage: O(Total Characters) to hold all target words in the prefix tree data structure.
+Recursion Stack: O(L) where L is the maximum depth of the DFS call stack (equal to the longest word length).
  */
 
 public class WordSearch2 {

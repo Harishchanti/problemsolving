@@ -7,7 +7,7 @@ import java.util.List;
 public class CountPossiblewayGetSumation {
     public static void main(String[] args) {
 
-        int a[] = { 1, 2 };
+        int[] a = { 1, 2 };
         int k = 8;
 
         ArrayList<ArrayList<Integer>> ans = new ArrayList<>();

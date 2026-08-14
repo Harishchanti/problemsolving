@@ -46,18 +46,18 @@ public class HouseRobber2 {
         if (l == 2)
             return Math.max(nums[0], nums[1]);
 
-        int first = maxTheftIncircleUtil(nums, 0, l - 1);
-        int last = maxTheftIncircleUtil(nums, 1, l);
+        int first = maxTheftEncircleUtil(nums, 0, l - 1);
+        int last = maxTheftEncircleUtil(nums, 1, l);
         return Math.max(first, last);
     }
 
-    private static int maxTheftIncircleUtil(int[] nums, int i, int l) {
+    private static int maxTheftEncircleUtil(int[] nums, int i, int l) {
         if (i >= l) {
             return 0;
         }
 
-        int include = nums[i] + maxTheftIncircleUtil(nums, i + 2, l);
-        int exclude = maxTheftIncircleUtil(nums, i + 1, l);
+        int include = nums[i] + maxTheftEncircleUtil(nums, i + 2, l);
+        int exclude = maxTheftEncircleUtil(nums, i + 1, l);
 
         return Math.max(include, exclude);
     }
