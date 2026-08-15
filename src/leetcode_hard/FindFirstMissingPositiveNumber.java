@@ -7,7 +7,7 @@ You must implement an algorithm that runs in O(n) time and uses O(1) auxiliary s
  */
 public class FindFirstMissingPositiveNumber {
     public static void main(String[] args) {
-        int[] a = { 1, 1 };// {1,2,0}  , {3,4,-1,1} , {7,8,9,11,12}
+        int[] a = {1,4,5,6,-1,2};//{ 1, 1 };// {1,2,0}  , {3,4,-1,1} , {7,8,9,11,12}
 
         System.out.println(findFirstMissingPositiveNumber(a));
     }
@@ -20,8 +20,8 @@ public class FindFirstMissingPositiveNumber {
                 swap(nums, nums[i] - 1, i);
             }
         }
-        for (int i = 0; i < l; i++) {
-            System.out.print(nums[i] + " ");
+        for (int num : nums) {
+            System.out.print(num + " ");
         }
         System.out.println();
 
