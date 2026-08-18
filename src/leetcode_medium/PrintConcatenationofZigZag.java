@@ -2,7 +2,9 @@ package leetcode_medium;
 
 // https://www.geeksforgeeks.org/print-concatenation-of-zig-zag-string-form-in-n-rows/amp/
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class PrintConcatenationofZigZag {
     static void printZigZagConcat(String str,
@@ -71,6 +73,39 @@ public class PrintConcatenationofZigZag {
         int n = 3;
 
         printZigZagConcat(str, n);
+        System.out.println();
+        System.out.println(printZigZagConcatV2(str,n));
+
+    }
+
+    private static String printZigZagConcatV2(String str, int n) {
+        List<StringBuilder> rows = new ArrayList<>(n);
+        for(int  i = 0; i< n;i++) rows.add(new StringBuilder());
+
+        if (n <= 1)
+            return str;
+
+        int step = 0;
+        int d = 1;
+
+        for(char c : str.toCharArray()) {
+
+            rows.get(step).append(c);
+
+            if(step == 0 ) {
+                d = 1;
+            } else if( step == n-1 ) {
+                d = -1;
+            }
+
+            step = step + d;
+
+        }
+        StringBuilder result = new StringBuilder();
+        for(StringBuilder sb :rows){
+            result.append(sb.toString());
+        }
+        return result.toString();
 
     }
 
