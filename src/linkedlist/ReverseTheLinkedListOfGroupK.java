@@ -30,6 +30,7 @@ public class ReverseTheLinkedListOfGroupK extends LinkedListProblems {
         head1.next.next.next.next.next.next = new Node("7");
         head1.next.next.next.next.next.next.next = new Node("8");
         head1.next.next.next.next.next.next.next.next = new Node("9");
+        head1.next.next.next.next.next.next.next.next.next = new Node("10");
 
         print(head1);
         Node  rHead = reverseKGroup(head1,k);
@@ -41,7 +42,7 @@ public class ReverseTheLinkedListOfGroupK extends LinkedListProblems {
 
         int  i = 0;
         Node temp = head;
-        while(i++ < k) {
+        while( i++ < k) {
             if(temp == null) return head;
             temp = temp.next;
         }
