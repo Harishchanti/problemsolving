@@ -41,6 +41,17 @@ public class WordSearch2 {
                         };
 
         String[] words = { "oath", "pea", "eat", "rain" };
+     // output : oath  eat
+
+      /*  char[][] board = { { 'a', 'b', 'c', 'd' },
+                            { 's', 'a', 'a', 't' },
+                            { 'a', 'c', 'k', 'e'},
+                            { 'a', 'c', 'd', 'n' } };
+
+        String[] words  = {"bat", "cat", "back", "backend", "stack"};*/
+
+        // output  => ["cat","back","backend"]
+
         Set<String> resultSet = new HashSet<String>();
         TrieNode root = build(words);
         int n = board.length;
@@ -75,13 +86,13 @@ public class WordSearch2 {
     static void DFS(char[][] board, TrieNode root, int i, int j,
             Set<String> result) {
 
-        if (i >= board.length || i < 0 || j >= board[0].length || j < 0
-                || board[i][j] == '$' || root.next[board[i][j] - 'a'] == null) {
+        if (i >= board.length || i < 0 || j >= board[0].length || j < 0 || board[i][j] == '$' || root.next[board[i][j] - 'a'] == null) {
             return;
         }
 
         if (root.next[board[i][j] - 'a'].word != null) {
             result.add(root.next[board[i][j] - 'a'].word);
+            root.next[board[i][j] - 'a'].word = null; // imp
         }
 
         root = root.next[board[i][j] - 'a'];
