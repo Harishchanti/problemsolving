@@ -37,7 +37,7 @@ public class KnightsProblem {
 
         cell t;
         int x, y;
-        boolean visit[][] = new boolean[N + 1][N + 1];
+        boolean[][] visit = new boolean[N + 1][N + 1];
 
         // visit starting state
         visit[knightPos[0]][knightPos[1]] = true;

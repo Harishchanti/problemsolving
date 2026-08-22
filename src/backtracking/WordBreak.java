@@ -33,6 +33,7 @@ Time complexity : O(2^n) ( without Memoization)
 public class WordBreak {
 
     static Boolean[] memo = new Boolean[301];
+
     public static void main(String[] args) {
         String input = "catsandog";
         List<String> words = new ArrayList<>();
@@ -42,13 +43,30 @@ public class WordBreak {
         words.add("and");
         words.add("cat");
 
-
         System.out.println(isWordBreakable(input, input.length(), words));
+        System.out.println(isWordBreakableUtilsV2(input, words));
+
     }
 
     private static boolean isWordBreakable(String input, int n,
             List<String> words) {
         return isWordBreakableUtils(0, n, input, words);
+    }
+
+    static boolean isWordBreakableUtilsV2(String input, List<String> words) {
+
+        if (input.isEmpty() )
+            return true;
+
+        for (int i = 0; i < input.length(); i++) {
+            String part = input.substring(0, i + 1);
+
+            if (words.contains(part) && isWordBreakableUtilsV2(
+                    input.substring(i + 1), words)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private static boolean isWordBreakableUtils(int idx, int n, String input,

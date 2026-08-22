@@ -145,7 +145,7 @@ public class SudokuProblems {
                 String col = j + "_COL_" + board[i][j];
                 String rc = i / 3 + "_ROW_" + j / 3 + "_COL_" + board[i][j];
 
-                if (set.contains(row) || set.contains(col) | set.contains(rc)) {
+                if (set.contains(row) || set.contains(col) || set.contains(rc)) {
                     return false;
                 }
 

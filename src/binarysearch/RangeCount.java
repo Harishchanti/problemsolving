@@ -55,9 +55,9 @@ public class RangeCount {
         System.out.println(countInRange(nums, 11, 20)); // 0*/
 
         int[] nums = {100,230,250,300,300,500};
-        System.out.println(countInRange(nums, 120, 120));// 4 (5-1)
+        System.out.println(countInRange(nums, 120, 120));// 4 (1-1)
         System.out.println(countInRange(nums, 110, 250));// 2 (3-1)
-        System.out.println(countInRange(nums, 300, 300));// 2 (5-3)
+        System.out.println(countInRange(nums, 400, 500));// 1 (6-5)
     }
 
 
