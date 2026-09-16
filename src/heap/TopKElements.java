@@ -36,8 +36,8 @@ Output: [1,2]
 public class TopKElements {
 
     public static void main(String[] args) {
-        int[] a = {1,2,1,2,1,2,3,1,3,2};
-        int k = 2;
+        int[] a = {1,2,1,2,1,2,3,1,3,2,4,4,4,4,4,5,5,6,6,6};
+        int k = 4;
         int[] res = topKFrequent(a,k);
         for (int i : res) {
             System.out.print(i+" ");
@@ -57,8 +57,9 @@ public class TopKElements {
             pq.add(e.getKey());
         }
         int[] r = new int[k];
-        while(--k >= 0) {
-            r[k] = pq.poll();
+        int i=0;
+        while(i < k) {
+            r[i++] = pq.poll();
         }
 
         return r;

@@ -30,10 +30,10 @@ public class NextGreaterNumber {
     }
 
     public static void main(String[] args) {
-        char[] digits = { '1','2' }; // { 5, 4, 7, 6, 3, 2, 1 }; //  5,7,1,2,3,4,6
+        char[] digits = { '5', '4', '7', '6', '3', '2', '1' }; //  5,7,1,2,3,4,6 //{ '1','2' };
         int n = digits.length;
         //findNext(digits, n);// 1,2,3,4,5 => 1,2,3,5,4
-        System.out.println(nextPermutation(String.valueOf(digits)));
+        System.out.println(nextPermutation(new String(digits)));
     }
 
     // Function to find the next permutation of a given

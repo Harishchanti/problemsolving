@@ -29,12 +29,13 @@ Explanation: Intervals [1,4] and [4,7] are considered overlapping.
  */
 public class MergeIntervals {
     public static void main(String[] args) {
-        int[][] a = { {4,4},{5,6} };
-        /*int[][] result = mergeIntervals(a);// O (nlogn)
+       /* int[][] a = {{1,3},{4,6},{2,6},{8,10},{15,18}};//{ {4,4},{5,6} };
+        int[][] result = mergeIntervals(a);// O (nlogn)
         for (int[] r : result) {
             System.out.println("(" + r[0] + "," + r[1] + ")");
         }*/
-
+        int[][] a = {{1,3},{4,6},{2,6},{8,10},{15,18}};
+        System.out.println("Optimized verison");
         int[][] result1 = mergeIntervalsV2(a);// O (n * 10000)
         for (int[] r : result1) {
             System.out.println("(" + r[0] + "," + r[1] + ")");

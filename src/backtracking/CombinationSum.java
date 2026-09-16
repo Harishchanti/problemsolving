@@ -44,7 +44,7 @@ public class CombinationSum {
 
     public static void combinationSum(int[] candidates, int target) {
 
-        findAllCombinationSum(candidates, 0, new ArrayList<Integer>(), target);
+        findAllCombinationSum(candidates, 0, new ArrayList<>(), target);
 
     }
 

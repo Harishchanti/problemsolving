@@ -2,6 +2,7 @@ package backtracking;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 /*
 You are given a 9 x 9 Sudoku board board. A Sudoku board is valid if the following rules are followed:
@@ -23,10 +24,17 @@ Input: board =
  [".",".",".",".","8",".",".","7","9"]]
 
 Output: true
+Blank Spaces (m): In an entirely empty grid, m = 81,
+leading to a theoretical worst-case complexity of O(9⁸¹).
 
  */
 public class SudokuProblems {
     public static void main(String[] args) {
+
+        ConcurrentHashMap<String,Integer> concurrentHashMap = new ConcurrentHashMap<>();
+
+        concurrentHashMap.replace("a",1,2);
+
         char[][] board = { { '1', '2', '.', '.', '3', '.', '.', '.', '.' },
                 { '4', '.', '.', '5', '.', '.', '.', '.', '.' },
                 { '.', '9', '8', '.', '.', '.', '.', '.', '3' },

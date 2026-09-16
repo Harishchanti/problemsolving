@@ -1,6 +1,5 @@
 package array;
 
-import java.util.Arrays;
 
 public class NextSmallestIntegerNotInArray {
     public static void main(String[] args) {
