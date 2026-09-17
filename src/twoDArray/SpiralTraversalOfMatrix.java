@@ -7,8 +7,11 @@ public class SpiralTraversalOfMatrix {
     public static void main(String[] args) {
         int R = 4;
         int C = 6;
-        int[][] a = { { 1, 2, 3, 4, 5, 6 }, { 7, 8, 9, 10, 11, 12 },
-                { 13, 14, 15, 16, 17, 18 }, { 19, 20, 21, 22, 23, 24 } };
+        int[][] a = {
+                    { 1, 2, 3, 4, 5, 6 },
+                    { 7, 8, 9, 10, 11, 12 },
+                    { 13, 14, 15, 16, 17, 18 },
+                    { 19, 20, 21, 22, 23, 24 } };
         printSpiralOrder(R, C, a);
         System.out.println();
         List<Integer> result = printSpiralOrderV2(a);
@@ -28,37 +31,37 @@ public class SpiralTraversalOfMatrix {
         int top = 0, down = m - 1;
         int left = 0, right = n - 1;
 
-        while(top <= down && left <= right) {
+        while (top <= down && left <= right) {
 
             dir = dir % 4;
 
-            if(dir == 0) {
+            if (dir == 0) {
 
-                for(int i = left ; i <= right ;i++) {
+                for (int i = left; i <= right; i++) {
                     res.add(matrix[top][i]);
                 }
                 top++;
             }
 
-            if( dir == 1) {
+            if (dir == 1) {
 
-                for(int i = top ; i <= down ;i++) {
+                for (int i = top; i <= down; i++) {
                     res.add(matrix[i][right]);
                 }
                 right--;
             }
 
-            if( dir == 2) {
+            if (dir == 2) {
 
-                for(int i = right ; i >= left;  i--) {
+                for (int i = right; i >= left; i--) {
                     res.add(matrix[down][i]);
                 }
                 down--;
             }
 
-            if( dir == 3) {
+            if (dir == 3) {
 
-                for(int i = down; i >= top ; i--) {
+                for (int i = down; i >= top; i--) {
                     res.add(matrix[i][left]);
                 }
                 left++;
