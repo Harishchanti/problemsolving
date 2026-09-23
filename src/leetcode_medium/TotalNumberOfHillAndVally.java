@@ -1,6 +1,6 @@
 package leetcode_medium;
 
-public class TotalNumberOfHillAndVally {
+public class  TotalNumberOfHillAndVally {
 
     public static void main(String[] args) {
         int[] a = {2, 2, 3, 4, 3, 3, 2, 2, 1, 1, 2, 5};// 4
