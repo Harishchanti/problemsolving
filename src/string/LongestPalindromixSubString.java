@@ -18,7 +18,7 @@ Output: "bb"
 
         System.out.println(longestPalindrome(s));
     }
-
+    // Blueprint method
     static private String longestPalindrome(String s) {
 
         int n = s.length();
