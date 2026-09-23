@@ -20,7 +20,7 @@ public class ThreadComunication {
                 System.out.println(" Thread name " + Thread.currentThread().getName() + " " + list.get(0));
                 list.set(0, list.get(0) + 1);
 
-                Thread.sleep(1000);
+               // Thread.sleep(1000);
                 list.notifyAll();
 
                /* if (list.get(0) % 2 == 0) {
