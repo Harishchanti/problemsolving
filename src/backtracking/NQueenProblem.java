@@ -82,7 +82,7 @@ public class NQueenProblem {
         }
 
         // check on the right side
-        for (int i = col + 1; i < board.length && row < board.length; i++) {
+        for (int i = col + 1; i < board.length ; i++) {
             if (board[row][i] == '$') {
                 return false;
             }

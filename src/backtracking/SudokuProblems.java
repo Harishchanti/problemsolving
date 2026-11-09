@@ -149,10 +149,9 @@ public class SudokuProblems {
                     continue;
                 }
 
-                String row = i + "_ROW_" + board[i][j];
-                String col = j + "_COL_" + board[i][j];
-                String rc = i / 3 + "_ROW_" + j / 3 + "_COL_" + board[i][j];
-
+                String row = i + "_ROW_" + c;
+                String col = j + "_COL_" + c;
+                String rc = i / 3 + "_ROW_" + j / 3 + "_COL_" + c;
                 if (set.contains(row) || set.contains(col) || set.contains(rc)) {
                     return false;
                 }

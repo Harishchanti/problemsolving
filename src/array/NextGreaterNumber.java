@@ -75,7 +75,7 @@ public class NextGreaterNumber {
                 N = new String(charArray);
                 break;
             }
-        }
+        }//
 
         // Reverse the digits after (i-1) because the digits
         // after (i-1) are in decreasing order and thus we

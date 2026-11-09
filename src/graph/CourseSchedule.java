@@ -5,8 +5,8 @@ import java.util.*;
 public class CourseSchedule {
     public static void main(String[] args) {
 
-        int numCourses = 2;
-        int[][] prerequisites = { { 0, 1 } };// 1-->0
+        int numCourses = 3;
+        int[][] prerequisites = { { 0, 1 } ,{2,1},{0,2}};// 1-->0
         System.out.println(canFinish(numCourses, prerequisites));
     }
 
@@ -17,23 +17,25 @@ public class CourseSchedule {
 
         int[] indegree = new int[numCourses];
 
-        for (int i = 0; i < numCourses; i++) {
+       /* for (int i = 0; i < numCourses; i++) {
             adjMap.put(i, new ArrayList<>());
-        }
+        }*/
 
         for (int i = 0; i < prerequisites.length; i++) {
 
             int v = prerequisites[i][0];
             int u = prerequisites[i][1];
 
-            adjMap.get(u).add(v);
+            adjMap.computeIfAbsent(u,k->new ArrayList<>()).add(v);
+
+            //adjMap.get(u).add(v);
             //list = adjMap.get(u);
             //list.add(v);
 
             indegree[v]++; // { { 0, 1 } };// 1 --> 0
            // adjMap.put(u, list);
         }
-
+        System.out.println(adjMap);
         return isTopoligicalSort(adjMap, numCourses, indegree);
 
     }
@@ -55,7 +57,7 @@ public class CourseSchedule {
         while (!queue.isEmpty()) {
             int u = queue.poll();
 
-            for (Integer v : adjMap.get(u)) {
+            for (Integer v : adjMap.getOrDefault(u,new ArrayList<>())) {
 
                 indegree[v]--;
 

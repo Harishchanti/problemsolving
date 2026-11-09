@@ -39,7 +39,7 @@ public class EditDistance {
 
         return findMinDistanceR(s1, s2, 0, 0);
     }
-    int[][] dp = new int[501][501];
+    //int[][] dp = new int[501][501];
     private static int findMinDistanceR(String s1, String s2, int i, int j) {
 
         if (i == s1.length()) {

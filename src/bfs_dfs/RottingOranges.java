@@ -8,7 +8,7 @@ public class RottingOranges {
        // int[][] grid = { { 2, 1, 1 }, { 0, 1, 1 }, { 1, 0, 1 } }; // -1
         //int[][] grid = {{0,2}};//
         int[][] grid = { { 2, 1, 1 }, { 1, 1, 0 }, { 0, 1, 1 } }; // 4
-        //int[][] grid = { { 2, 0 }}; // -1
+        //int[][] grid = { { 2, 0 }}; // 0
         System.out.println(orangesRottingV2(grid));
     }
 
